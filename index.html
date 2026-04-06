@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero2Dev — Aprende a programar con IA, Node.js y Fullstack | Mentoría 1:1</title>
+  <meta name="description"
+    content="Academia de programación con mentoría 1:1 personalizada. Aprende IA aplicada, Node.js y desarrollo Fullstack desde cero con un mentor real. Desde 149€/mes." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://raulhsanchez.github.io/zero2dev/" />
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232D5BE3'/><text x='16' y='22' font-family='Arial' font-weight='900' font-size='14' fill='white' text-anchor='middle'>Z2D</text></svg>" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://raulhsanchez.github.io/zero2dev/" />
+  <meta property="og:title"       content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
+  <meta property="og:description" content="Formación personalizada en IA, Node.js y Fullstack. Mentoría individual con un mentor real. Sin bootcamps caros. Desde 149€/mes." />
+  <meta property="og:image"       content="https://raulhsanchez.github.io/zero2dev/og-image.png" />
+  <!-- PENDIENTE: crea una imagen de 1200x630px con el logo Zero2Dev y súbela como og-image.png junto al index.html -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
+  <meta name="twitter:description" content="Formación personalizada en IA, Node.js y Fullstack. Desde 149€/mes. Sin permanencias." />
+  <meta name="twitter:image"       content="https://raulhsanchez.github.io/zero2dev/og-image.png" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://raulhsanchez.github.io/zero2dev/#organization",
+        "name": "Zero2Dev",
+        "url": "https://raulhsanchez.github.io/zero2dev",
+        "logo": "https://raulhsanchez.github.io/zero2dev/og-image.png",
+        "description": "Academia de programación e inteligencia artificial con mentoría 1:1 personalizada. Rutas en IA Developer, Backend Node.js y Fullstack.",
+        "sameAs": ["https://instagram.com/zero_2_dev_"],
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Mentoría 1:1 Plan Starter",
+            "price": "149",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "description": "2 sesiones individuales de mentoría en programación al mes"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mentoría 1:1 Plan Pro",
+            "price": "299",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "description": "4 sesiones individuales de mentoría en programación al mes"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mentoría 1:1 Plan Elite",
+            "price": "499",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "description": "8 sesiones individuales de mentoría en programación al mes"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Rutas de aprendizaje",
+          "itemListElement": [
+            {
+              "@type": "Course",
+              "name": "IA Developer",
+              "description": "Aprende a programar aplicaciones con inteligencia artificial. Python, OpenAI API, agentes IA, RAG y despliegue en producción.",
+              "timeRequired": "P4M",
+              "educationalLevel": "Beginner to Intermediate",
+              "teaches": "Programación con IA, Python, LangChain, RAG, despliegue"
+            },
+            {
+              "@type": "Course",
+              "name": "Backend Node.js",
+              "description": "Desarrollo backend con Node.js, APIs REST, bases de datos y despliegue en la nube.",
+              "timeRequired": "P5M",
+              "educationalLevel": "Beginner to Intermediate",
+              "teaches": "Node.js, Express, PostgreSQL, Docker, APIs REST"
+            },
+            {
+              "@type": "Course",
+              "name": "Fullstack Developer",
+              "description": "Desarrollo fullstack completo: frontend con React/Next.js, backend con Node.js e integración de IA.",
+              "timeRequired": "P6M",
+              "educationalLevel": "Beginner to Intermediate",
+              "teaches": "React, Next.js, Node.js, TypeScript, MongoDB, IA"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Necesito experiencia previa para empezar a aprender programación en Zero2Dev?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Las rutas están diseñadas para cualquier punto de partida. En la sesión discovery evaluamos tu nivel actual y construimos la ruta desde ahí, sin asumir conocimientos previos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay permanencia o puedo cancelar la mentoría cuando quiera?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sin permanencias. Cancelas cuando quieras con 7 días de antelación al siguiente ciclo de facturación. Sin penalizaciones, sin preguntas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta la mentoría 1:1 de programación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Los planes van desde 149€/mes (Plan Starter, 2 sesiones) hasta 499€/mes (Plan Elite, 8 sesiones). Sin permanencias y con primera sesión discovery gratuita."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.08);
+      --border2: rgba(255, 255, 255, 0.12);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --text3: #6E6E73;
+      --accent: #2D5BE3;
+      --accent2: #4A7AFF;
+      --white: #FFFFFF;
+      --radius: 18px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 52px;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 max(24px, calc(50% - 540px));
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: -0.2px;
+    }
+
+    .nav-logo span {
+      color: var(--accent2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 0.35rem 1rem;
+      border-radius: 980px;
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: #1e4bd1 !important;
+      color: var(--white) !important;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1.5rem 5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      max-width: 820px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent2) 0%, #9BB8FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text2);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+      justify-content: center;
+      margin-bottom: 5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.875rem 1.75rem;
+      border-radius: 980px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      letter-spacing: -0.1px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: #1e4bd1;
+      transform: scale(1.02);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--accent2);
+      border: 1px solid rgba(74, 122, 255, 0.3);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(74, 122, 255, 0.08);
+      border-color: rgba(74, 122, 255, 0.5);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg3);
+    }
+
+    .metric {
+      padding: 1.5rem 2.5rem;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .metric:last-child {
+      border-right: none;
+    }
+
+    .metric-val {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -1px;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text3);
+      margin-top: 0.25rem;
+      font-weight: 400;
+    }
+
+    @media (max-width: 640px) {
+      .metric {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .metric-val {
+        font-size: 1.4rem;
+      }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTION BASE ── */
+    .section {
+      padding: 7rem max(1.5rem, calc(50% - 540px));
+    }
+
+    .section-sm {
+      padding: 5rem max(1.5rem, calc(50% - 540px));
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--text2);
+      max-width: 480px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── PROBLEM ── */
+    .problem {
+      background: var(--bg2);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .problem-item {
+      background: var(--bg2);
+      padding: 2.25rem 2rem;
+    }
+
+    .problem-num {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text3);
+      margin-bottom: 1rem;
+    }
+
+    .problem-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .problem-item p {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ── HOW ── */
+    .how {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .how {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .how-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .how-step-num {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text3);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .how-step h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .how-step p {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .how-visual {
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .visual-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .visual-card-label {
+      font-size: 0.7rem;
+      color: var(--text3);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .visual-card-val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .visual-bar-wrap {
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-top: 0.75rem;
+      overflow: hidden;
+    }
+
+    .visual-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--accent2);
+    }
+
+    /* ── RUTAS ── */
+    .rutas-bg {
+      background: var(--bg2);
+    }
+
+    .rutas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .ruta-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s;
+    }
+
+    .ruta-card:hover {
+      border-color: var(--border2);
+    }
+
+    .ruta-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+    }
+
+    .ruta-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.3px;
+      margin-bottom: 0.75rem;
+    }
+
+    .ruta-card p {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .ruta-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stack-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 400;
+    }
+
+    .ruta-footer {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text3);
+    }
+
+    /* ── PLANES ── */
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .plan-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .plan-card.featured {
+      background: var(--bg3);
+      border-color: var(--accent);
+    }
+
+    .plan-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-label.featured-label {
+      color: var(--accent2);
+    }
+
+    .plan-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .plan-price-row .amount {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -2px;
+    }
+
+    .plan-price-row .currency {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text3);
+      align-self: flex-start;
+      padding-top: 0.5rem;
+    }
+
+    .plan-price-row .period {
+      font-size: 0.875rem;
+      color: var(--text3);
+    }
+
+    .plan-desc {
+      font-size: 0.875rem;
+      color: var(--text2);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--text2);
+      padding: 0.5rem 0;
+      font-weight: 300;
+    }
+
+    .feat-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(74, 122, 255, 0.15);
+      border: 1px solid rgba(74, 122, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .feat-check svg {
+      width: 9px;
+      height: 9px;
+      color: var(--accent2);
+    }
+
+    .plan-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 980px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .plan-btn-fill {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .plan-btn-fill:hover {
+      background: #1e4bd1;
+    }
+
+    .plan-btn-line {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border2);
+    }
+
+    .plan-btn-line:hover {
+      border-color: #586069;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* ── FAQ ── */
+    .faq-bg {
+      background: var(--bg2);
+    }
+
+    .faq-wrap {
+      max-width: 640px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    .faq-q:hover {
+      color: var(--white);
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--border2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+      color: var(--text3);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.7;
+      font-weight: 300;
+      padding-bottom: 1.5rem;
+      display: none;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      text-align: center;
+      padding: 8rem max(1.5rem, calc(50% - 540px));
+    }
+
+    .cta-final h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .cta-final p {
+      font-size: 1.1rem;
+      color: var(--text2);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text3);
+      font-size: 0.85rem;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .ig-link:hover {
+      color: var(--text2);
+    }
+
+    /* ── MENTOR ── */
+    .mentor-wrap {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .mentor-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .mentor-photo-box {
+      position: relative;
+    }
+    .mentor-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+    }
+    /* Placeholder cuando no hay foto */
+    .mentor-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      background: var(--bg3);
+      border: 1px dashed var(--border2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--text3);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    .mentor-photo-placeholder svg { opacity: 0.3; }
+    .mentor-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+    }
+    .mentor-badge-val {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .mentor-badge-label {
+      font-size: 0.72rem;
+      color: var(--text3);
+      margin-top: 0.1rem;
+    }
+    .mentor-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.25rem;
+    }
+    .mentor-role {
+      font-size: 0.85rem;
+      color: var(--accent2);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .mentor-bio {
+      font-size: 1rem;
+      color: var(--text2);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .mentor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .mentor-tag {
+      background: rgba(74,122,255,0.1);
+      border: 1px solid rgba(74,122,255,0.2);
+      color: var(--accent2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 980px;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem max(1.5rem, calc(50% - 540px));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .footer-logo span {
+      color: var(--accent2);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Zero<span>2</span>Dev</div>
+    <ul class="nav-links">
+      <li><a href="#rutas">Rutas</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul" target="_blank" class="nav-cta">Sesión gratuita</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Mentoría 1:1 · IA · Backend · Fullstack</p>
+    <h1>Aprende a programar con IA<br /><em>con un mentor real a tu lado.</em></h1>
+    <p class="hero-sub">
+      Formación técnica personalizada con un mentor dedicado.
+      No cursos grabados, no plantillas genéricas.
+      Tu ruta, tu ritmo, resultados reales.
+    </p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary">
+        Reserva una sesión gratuita
+      </a>
+      <a href="#planes" class="btn btn-ghost">Ver planes</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric">
+        <div class="metric-val">1:1</div>
+        <div class="metric-label">Mentoría individual</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">3</div>
+        <div class="metric-label">Rutas especializadas</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">149€</div>
+        <div class="metric-label">Desde / mes</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">0</div>
+        <div class="metric-label">Requisitos previos</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROBLEM -->
+  <section class="section problem">
+    <p class="eyebrow">El problema</p>
+    <h2 class="section-title" style="margin-bottom:3rem">Por qué la mayoría abandona</h2>
+    <div class="problem-grid">
+      <div class="problem-item">
+        <div class="problem-num">01</div>
+        <h3>Sin dirección clara</h3>
+        <p>Tutoriales sin estructura, tecnologías que cambian, y ninguna ruta que te lleve de A a B de forma ordenada.
+        </p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">02</div>
+        <h3>Sin feedback real</h3>
+        <p>Nadie revisa tu código. Nadie detecta los errores de base que llevas semanas repitiendo sin saberlo.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">03</div>
+        <h3>Sin contexto personal</h3>
+        <p>Los cursos masivos no conocen tu situación. La misma clase para 10.000 personas no funciona para nadie.</p>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">04</div>
+        <h3>O muy caro o muy superficial</h3>
+        <p>Un bootcamp de 9.000€ o un curso de YouTube. Zero2Dev existe en el espacio que hay entre los dos.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW -->
+  <section class="section">
+    <div class="how">
+      <div>
+        <p class="eyebrow">Cómo funciona</p>
+        <h2 class="section-title">De la primera llamada<br />a tu primer deploy</h2>
+        <p class="section-body" style="margin-bottom:3rem">
+          Un proceso diseñado para ir directo al punto. Sin formularios interminables, sin esperas.
+        </p>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="how-step-num">1</div>
+            <div>
+              <h3>Sesión discovery (sin coste)</h3>
+              <p>15 minutos para entender dónde estás y adónde quieres llegar. Te propongo la ruta y el plan exacto.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">2</div>
+            <div>
+              <h3>Ruta a medida</h3>
+              <p>Un plan de aprendizaje construido alrededor de tus objetivos, no de un temario genérico.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">3</div>
+            <div>
+              <h3>Sesiones 1:1 en vivo</h3>
+              <p>Pair programming, code review, preguntas reales. Aprendes haciendo, con alguien que ya ha pasado por
+                ahí.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">4</div>
+            <div>
+              <h3>Portfolio real</h3>
+              <p>Cada sesión produce algo concreto. Al terminar, tienes proyectos desplegados y listos para mostrar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-visual">
+        <div class="visual-card">
+          <div class="visual-card-label">Plan activo</div>
+          <div class="visual-card-val">Ruta IA Developer</div>
+          <div class="visual-bar-wrap">
+            <div class="visual-bar" style="width:62%"></div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Próxima sesión</div>
+          <div class="visual-card-val">Lunes · 19:00h</div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Módulo actual</div>
+          <div class="visual-card-val">Agentes con LangChain</div>
+          <div class="visual-bar-wrap">
+            <div class="visual-bar" style="width:40%; background:#3FB950"></div>
+          </div>
+        </div>
+        <div class="visual-card">
+          <div class="visual-card-label">Último feedback del mentor</div>
+          <div class="visual-card-val" style="font-size:0.875rem; font-weight:400; color:var(--text2); line-height:1.5">
+            "La estructura del agente está bien. La semana que viene trabajamos el manejo de errores y el logging en
+            producción."
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MENTOR -->
+  <section class="section">
+    <div class="mentor-wrap">
+      <div class="mentor-photo-box">
+
+        <!-- CUANDO TENGAS FOTO: sustituye este bloque por:          -->
+        <!-- <img src="foto-raul.jpg" alt="Raul Sánchez, mentor de   -->
+        <!--  programación e IA en Zero2Dev" class="mentor-photo" /> -->
+        <div class="mentor-photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Tu foto aquí<br/>Reemplaza este bloque<br/>por una imagen tuya</span>
+        </div>
+
+        <div class="mentor-badge">
+          <div class="mentor-badge-val">100%</div>
+          <div class="mentor-badge-label">Dedicación 1:1</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">Tu mentor</p>
+        <div class="mentor-name">Raul Sánchez</div>
+        <div class="mentor-role">Fundador · Developer · Mentor</div>
+        <p class="mentor-bio">
+          Desarrollador con experiencia en IA aplicada, backend con Node.js y arquitecturas fullstack.
+          Creé Zero2Dev porque vi de cerca la brecha que existe entre querer aprender a programar
+          y tener acceso a una formación que realmente funcione: personalizada, práctica
+          y con alguien que ya ha recorrido ese camino.
+        </p>
+        <p class="mentor-bio" style="margin-top:-1rem">
+          En cada sesión trabajo contigo directamente: revisamos tu código, desbloqueamos los
+          puntos donde te atascas y construimos proyectos reales desde el primer día.
+          No hay grabaciones, no hay plantillas. Hay una persona que te conoce y sabe
+          exactamente dónde ayudarte.
+        </p>
+        <div class="mentor-tags">
+          <span class="mentor-tag">IA Aplicada</span>
+          <span class="mentor-tag">Node.js</span>
+          <span class="mentor-tag">React / Next.js</span>
+          <span class="mentor-tag">Python</span>
+          <span class="mentor-tag">Arquitectura backend</span>
+          <span class="mentor-tag">Pair programming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- RUTAS -->
+  <section class="section rutas-bg" id="rutas">
+    <p class="eyebrow">Rutas de aprendizaje</p>
+    <h2 class="section-title" style="margin-bottom:0.75rem">Elige tu especialidad</h2>
+    <p class="section-body" style="margin-bottom:3rem">
+      Tres caminos hacia las tecnologías con mayor demanda en el mercado actual.
+    </p>
+    <div class="rutas-grid">
+      <div class="ruta-card">
+        <p class="ruta-eyebrow">Más solicitada</p>
+        <h3>IA Developer</h3>
+        <p>Desarrolla aplicaciones reales con los modelos de inteligencia artificial más avanzados. Desde fundamentos
+          hasta agentes autónomos en producción.</p>
+        <div class="ruta-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">OpenAI</span>
+          <span class="stack-tag">Claude API</span>
+          <span class="stack-tag">LangChain</span>
+          <span class="stack-tag">RAG</span>
+          <span class="stack-tag">Deploy</span>
+        </div>
+        <div class="ruta-footer">Duración estimada · 4 meses</div>
+      </div>
+      <div class="ruta-card">
+        <p class="ruta-eyebrow">Alta demanda laboral</p>
+        <h3>Backend Node.js</h3>
+        <p>Construye APIs robustas, gestiona bases de datos y despliega servicios en la nube. La base técnica que toda
+          empresa necesita.</p>
+        <div class="ruta-stack">
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">Express</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">REST</span>
+          <span class="stack-tag">Docker</span>
+        </div>
+        <div class="ruta-footer">Duración estimada · 5 meses</div>
+      </div>
+      <div class="ruta-card">
+        <p class="ruta-eyebrow">Ruta completa</p>
+        <h3>Fullstack Developer</h3>
+        <p>Frontend, backend, bases de datos y despliegue. El perfil más versátil del mercado, con integración de IA
+          incluida en el stack final.</p>
+        <div class="ruta-stack">
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">IA</span>
+        </div>
+        <div class="ruta-footer">Duración estimada · 6 meses</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PLANES -->
+  <section class="section" id="planes">
+    <p class="eyebrow">Planes</p>
+    <h2 class="section-title" style="margin-bottom:0.75rem">Transparencia total</h2>
+    <p class="section-body" style="margin-bottom:3rem">
+      Sin permanencias. Sin letra pequeña. Cancelas cuando quieras con 7 días de antelación.
+    </p>
+    <div class="planes-grid">
+
+      <div class="plan-card">
+        <p class="plan-label">Starter</p>
+        <div class="plan-price-row">
+          <span class="currency">€</span>
+          <span class="amount">149</span>
+          <span class="period">/ mes</span>
+        </div>
+        <p class="plan-desc">2 sesiones individuales al mes. El punto de partida para quien está empezando.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> 2 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Ruta de aprendizaje personalizada</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Chat con mentor (respuesta en 48h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> 2 code reviews al mes</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Comunidad Discord</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Certificado digital</li>
+        </ul>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Empezar</a>
+      </div>
+
+      <div class="plan-card featured">
+        <p class="plan-label featured-label">Pro · Más elegido</p>
+        <div class="plan-price-row">
+          <span class="currency">€</span>
+          <span class="amount">299</span>
+          <span class="period">/ mes</span>
+        </div>
+        <p class="plan-desc">4 sesiones mensuales. El equilibrio entre profundidad y coste para avanzar con
+          consistencia.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> 4 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Ruta de aprendizaje personalizada</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Chat con mentor (respuesta en 24h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Code reviews ilimitados</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> 2 proyectos guiados al mes</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Preparación de entrevistas</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Discord VIP + networking</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Certificado + badge LinkedIn</li>
+        </ul>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-fill">Empezar con
+          Pro</a>
+      </div>
+
+      <div class="plan-card">
+        <p class="plan-label">Elite</p>
+        <div class="plan-price-row">
+          <span class="currency">€</span>
+          <span class="amount">499</span>
+          <span class="period">/ mes</span>
+        </div>
+        <p class="plan-desc">8 sesiones mensuales. Para quien quiere avanzar al máximo ritmo posible con soporte
+          prioritario.</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> 8 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Roadmap profesional a medida</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Chat prioritario (respuesta en 12h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Code reviews ilimitados y prioritarios</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Proyectos sin límite</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Mock interviews técnicas</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="2,5 4,7.5 8,3" />
+              </svg></span> Carta de recomendación</li>
+        </ul>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Empezar</a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section class="section faq-bg" id="faq">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="section-title" style="margin-bottom:3rem">Preguntas frecuentes</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Necesito experiencia previa para empezar?
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <line x1="5" y1="1" x2="5" y2="9" />
+              <line x1="1" y1="5" x2="9" y2="5" />
+            </svg></span>
+        </button>
+        <div class="faq-a">No. Las rutas están diseñadas para cualquier punto de partida. En la sesión discovery
+          evaluamos tu nivel actual y construimos la ruta desde ahí, sin asumir conocimientos previos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Hay permanencia o puedo cancelar cuando quiera?
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <line x1="5" y1="1" x2="5" y2="9" />
+              <line x1="1" y1="5" x2="9" y2="5" />
+            </svg></span>
+        </button>
+        <div class="faq-a">Sin permanencias. Cancelas cuando quieras con 7 días de antelación al siguiente ciclo de
+          facturación. Sin penalizaciones, sin preguntas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Cómo se coordinan las sesiones?
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <line x1="5" y1="1" x2="5" y2="9" />
+              <line x1="1" y1="5" x2="9" y2="5" />
+            </svg></span>
+        </button>
+        <div class="faq-a">A través de Calendly, en el horario que mejor encaje con tu agenda. Las sesiones son por
+          videollamada (Google Meet) con pantalla compartida para pair programming y revisión de código en tiempo real.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Cuánto tiempo necesito dedicar por semana?
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <line x1="5" y1="1" x2="5" y2="9" />
+              <line x1="1" y1="5" x2="9" y2="5" />
+            </svg></span>
+        </button>
+        <div class="faq-a">El mínimo recomendado son 5 horas semanales, incluyendo la sesión con el mentor. Con 8-10
+          horas verás un progreso claramente más rápido. La consistencia importa más que la intensidad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Puedo cambiar de ruta si me arrepiento?
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <line x1="5" y1="1" x2="5" y2="9" />
+              <line x1="1" y1="5" x2="9" y2="5" />
+            </svg></span>
+        </button>
+        <div class="faq-a">Sí, en cualquier momento y sin penalización. Si tras las primeras sesiones ves que otra ruta
+          encaja mejor con tus objetivos, hacemos el cambio y ajustamos el plan.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <p class="eyebrow">Primer paso</p>
+    <h2>La sesión<br />discovery es gratis.</h2>
+    <p>15 minutos. Sin compromiso. Sin tarjeta de crédito.<br />Sólo una conversación sobre lo que quieres conseguir.
+    </p>
+    <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary"
+      style="font-size:1rem; padding:1rem 2rem;">
+      Reservar sesión gratuita
+    </a>
+    <br />
+    <a href="https://instagram.com/zero_2_dev_" target="_blank" class="ig-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+      </svg>
+      @zero_2_dev_
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Zero<span>2</span>Dev</div>
+    <div class="footer-links">
+      <a href="https://instagram.com/zero_2_dev_" target="_blank">Instagram</a>
+      <a href="https://calendly.com/92sanchez-raul" target="_blank">Contacto</a>
+      <a href="mailto:92sanchez.raul@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+
+</body>
+
+</html>
