@@ -6,27 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zero2Dev — Aprende a programar con IA, Node.js y Fullstack | Mentoría 1:1</title>
   <meta name="description"
-    content="Academia de programación con mentoría 1:1 personalizada. Aprende IA aplicada, Node.js y desarrollo Fullstack desde cero con un mentor real. Desde 149€/mes." />
+    content="Aprende inteligencia artificial aplicada, Node.js y desarrollo Fullstack con mentoría 1:1 personalizada. El mejor curso de IA para programadores. Desde 149€/mes." />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://raulhsanchez.github.io/zero2dev_landing/" />
 
   <!-- Favicon SVG inline -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232D5BE3'/><text x='16' y='22' font-family='Arial' font-weight='900' font-size='14' fill='white' text-anchor='middle'>Z2D</text></svg>" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232D5BE3'/><text x='16' y='22' font-family='Arial' font-weight='900' font-size='14' fill='white' text-anchor='middle'>Z2D</text></svg>" />
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://raulhsanchez.github.io/zero2dev_landing/" />
-  <meta property="og:title"       content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
-  <meta property="og:description" content="Formación personalizada en IA, Node.js y Fullstack. Mentoría individual con un mentor real. Sin bootcamps caros. Desde 149€/mes." />
-  <meta property="og:image"       content="https://raulhsanchez.github.io/zero2dev_landing/raul.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://raulhsanchez.github.io/zero2dev_landing/" />
+  <meta property="og:title" content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
+  <meta property="og:description"
+    content="Formación personalizada en IA, Node.js y Fullstack. Mentoría individual con un mentor real. Sin bootcamps caros. Desde 149€/mes." />
+  <meta property="og:image" content="https://raulhsanchez.github.io/zero2dev_landing/raul.jpg" />
   <!-- PENDIENTE: crea una imagen de 1200x630px con el logo Zero2Dev y súbela como og-image.png junto al index.html -->
 
   <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
-  <meta name="twitter:description" content="Formación personalizada en IA, Node.js y Fullstack. Desde 149€/mes. Sin permanencias." />
-  <meta name="twitter:image"       content="https://raulhsanchez.github.io/zero2dev_landing/raul.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zero2Dev — Aprende a programar con IA y mentoría 1:1" />
+  <meta name="twitter:description"
+    content="Formación personalizada en IA, Node.js y Fullstack. Desde 149€/mes. Sin permanencias." />
+  <meta name="twitter:image" content="https://raulhsanchez.github.io/zero2dev_landing/raul.jpg" />
 
   <!-- Robots -->
   <meta name="robots" content="index, follow" />
@@ -887,12 +890,18 @@
       gap: 5rem;
       align-items: center;
     }
+
     @media (max-width: 860px) {
-      .mentor-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mentor-wrap {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
     }
+
     .mentor-photo-box {
       position: relative;
     }
+
     .mentor-photo {
       width: 100%;
       aspect-ratio: 4/5;
@@ -902,6 +911,7 @@
       background: var(--bg3);
       border: 1px solid var(--border2);
     }
+
     /* Placeholder cuando no hay foto */
     .mentor-photo-placeholder {
       width: 100%;
@@ -919,7 +929,11 @@
       text-align: center;
       padding: 2rem;
     }
-    .mentor-photo-placeholder svg { opacity: 0.3; }
+
+    .mentor-photo-placeholder svg {
+      opacity: 0.3;
+    }
+
     .mentor-badge {
       position: absolute;
       bottom: -1rem;
@@ -929,17 +943,20 @@
       border-radius: 14px;
       padding: 1rem 1.25rem;
     }
+
     .mentor-badge-val {
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
       letter-spacing: -0.5px;
     }
+
     .mentor-badge-label {
       font-size: 0.72rem;
       color: var(--text3);
       margin-top: 0.1rem;
     }
+
     .mentor-name {
       font-size: 2rem;
       font-weight: 700;
@@ -947,6 +964,7 @@
       letter-spacing: -0.5px;
       margin-bottom: 0.25rem;
     }
+
     .mentor-role {
       font-size: 0.85rem;
       color: var(--accent2);
@@ -955,6 +973,7 @@
       text-transform: uppercase;
       margin-bottom: 1.5rem;
     }
+
     .mentor-bio {
       font-size: 1rem;
       color: var(--text2);
@@ -963,14 +982,16 @@
       margin-bottom: 2rem;
       max-width: 480px;
     }
+
     .mentor-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .mentor-tag {
-      background: rgba(74,122,255,0.1);
-      border: 1px solid rgba(74,122,255,0.2);
+      background: rgba(74, 122, 255, 0.1);
+      border: 1px solid rgba(74, 122, 255, 0.2);
       color: var(--accent2);
       padding: 0.3rem 0.8rem;
       border-radius: 980px;
@@ -1103,7 +1124,7 @@
     <div class="how">
       <div>
         <p class="eyebrow">Cómo funciona</p>
-        <h2 class="section-title">De la primera llamada<br />a tu primer deploy</h2>
+        <h2 class="section-title">Tu camino para aprender IA<br />y programación desde cero</h2>
         <p class="section-body" style="margin-bottom:3rem">
           Un proceso diseñado para ir directo al punto. Sin formularios interminables, sin esperas.
         </p>
@@ -1217,9 +1238,9 @@
   <!-- RUTAS -->
   <section class="section rutas-bg" id="rutas">
     <p class="eyebrow">Rutas de aprendizaje</p>
-    <h2 class="section-title" style="margin-bottom:0.75rem">Elige tu especialidad</h2>
+    <h2 class="section-title" style="margin-bottom:0.75rem">Rutas de IA y Programación</h2>
     <p class="section-body" style="margin-bottom:3rem">
-      Tres caminos hacia las tecnologías con mayor demanda en el mercado actual.
+      Tres rutas especializadas en las tecnologías de inteligencia artificial con mayor demanda.
     </p>
     <div class="rutas-grid">
       <div class="ruta-card">
@@ -1310,7 +1331,8 @@
                 <polyline points="2,5 4,7.5 8,3" />
               </svg></span> Certificado digital</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión
+          gratuita</a>
       </div>
 
       <div class="plan-card featured">
@@ -1349,7 +1371,8 @@
                 <polyline points="2,5 4,7.5 8,3" />
               </svg></span> Certificado + badge LinkedIn</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-fill">Reservar sesión gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-fill">Reservar sesión
+          gratuita</a>
       </div>
 
       <div class="plan-card">
@@ -1385,7 +1408,8 @@
                 <polyline points="2,5 4,7.5 8,3" />
               </svg></span> Carta de recomendación</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión
+          gratuita</a>
       </div>
 
     </div>

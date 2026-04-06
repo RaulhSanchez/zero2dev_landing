@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raulhsanchez.github.io/zero2dev_landing/sitemap.xml
