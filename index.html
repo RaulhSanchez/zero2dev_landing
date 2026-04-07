@@ -643,6 +643,74 @@
       color: var(--text3);
     }
 
+    /* ── PROYECTOS ── */
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .proyecto-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .proyecto-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent2);
+    }
+
+    .proyecto-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .proyecto-img svg {
+      width: 48px;
+      height: 48px;
+      color: var(--text3);
+      opacity: 0.4;
+    }
+
+    .proyecto-content {
+      padding: 1.5rem;
+    }
+
+    .proyecto-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent2);
+      margin-bottom: 0.75rem;
+    }
+
+    .proyecto-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .proyecto-card p {
+      font-size: 0.875rem;
+      color: var(--text2);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
     /* ── PLANES ── */
     .planes-grid {
       display: grid;
@@ -1230,6 +1298,62 @@
           <span class="mentor-tag">Python</span>
           <span class="mentor-tag">Arquitectura backend</span>
           <span class="mentor-tag">Pair programming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <p class="eyebrow">Portfolio de referencia</p>
+    <h2 class="section-title" style="margin-bottom:0.75rem">Código real. Soluciones reales.</h2>
+    <p class="section-body" style="margin-bottom:3rem">
+      Más que teoría. Estos son ejemplos del tipo de arquitectura y lógica que aprenderás a construir conmigo.
+    </p>
+    <div class="proyectos-grid">
+      <div class="proyecto-card">
+        <div class="proyecto-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <div class="proyecto-content">
+          <div class="proyecto-tag">IA Developer</div>
+          <h3>Auto-Agent RAG System</h3>
+          <p>Sistema de inteligencia artificial que procesa documentos PDF de forma autónoma, creando una base de
+            conocimientos para responder preguntas con contexto exacto.</p>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <div class="proyecto-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+        </div>
+        <div class="proyecto-content">
+          <div class="proyecto-tag">Backend Node.js</div>
+          <h3>API Multi-Tenant Pro</h3>
+          <p>Estructura backend robusta para SaaS que soporta múltiples organizaciones, roles dinámicos y métricas de
+            uso con escalabilidad garantizada.</p>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <div class="proyecto-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+        </div>
+        <div class="proyecto-content">
+          <div class="proyecto-tag">Fullstack Developer</div>
+          <h3>Real-time Analytics Dashboard</h3>
+          <p>Panel interactivo construido con Next.js que visualiza picos de tráfico y eventos en tiempo vivo mediante
+            comunicación por WebSockets.</p>
         </div>
       </div>
     </div>
