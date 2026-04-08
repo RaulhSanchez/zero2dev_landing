@@ -8,6 +8,16 @@
   <meta name="description"
     content="Aprende inteligencia artificial aplicada, Node.js y desarrollo Fullstack con mentoría 1:1 personalizada. El mejor curso de IA para programadores. Desde 149€/mes." />
 
+  <!-- Google analytics (gtag.js) -->
+  <!-- SUSTITUYE G-XXXXXXXXXX POR TU ID DE MEDICIÓN DE GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
   <!-- Canonical -->
   <link rel="canonical" href="https://raulhsanchez.github.io/zero2dev_landing/" />
 
@@ -1180,15 +1190,17 @@
     <p class="hero-eyebrow">Mentoría 1:1 · IA · Backend · Fullstack</p>
     <h1>Aprende a programar con IA<br /><em>con un mentor real a tu lado.</em></h1>
     <p class="hero-sub">
-      Formación técnica personalizada con un mentor dedicado.
-      No cursos grabados, no plantillas genéricas.
-      Tu ruta, tu ritmo, resultados reales.
+      Deja de saltar de tutorial en tutorial. Construye un plan de estudio real,
+      enfocado en lo que las empresas piden en 2026. Resultados reales, sin relleno.
     </p>
     <div class="hero-actions">
       <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary">
         Reserva una sesión gratuita
       </a>
-      <a href="#planes" class="btn btn-ghost">Ver planes</a>
+      <!-- NUEVO BOTÓN: Lead Magnet para capturar leads fríos -->
+      <a href="De%20cero%20a%20developer%20-%20Zero2Dev.pdf" download class="btn btn-ghost">
+        Descargar Roadmap Gratis
+      </a>
     </div>
     <div class="hero-metrics">
       <div class="metric">
@@ -1320,15 +1332,12 @@
   <section class="section">
     <div class="mentor-wrap">
       <div class="mentor-photo-box">
-
         <img src="raul.jpg" alt="Raul Sánchez, mentor de programación e IA en Zero2Dev" class="mentor-photo" />
-
         <div class="mentor-badge">
           <div class="mentor-badge-val">100%</div>
           <div class="mentor-badge-label">Dedicación 1:1</div>
         </div>
       </div>
-
       <div>
         <p class="eyebrow">Tu mentor</p>
         <div class="mentor-name">Raul Sánchez</div>
