@@ -1046,28 +1046,6 @@
       border: 1px solid var(--border2);
     }
 
-    /* Placeholder cuando no hay foto */
-    .mentor-photo-placeholder {
-      width: 100%;
-      aspect-ratio: 4/5;
-      border-radius: 20px;
-      background: var(--bg3);
-      border: 1px dashed var(--border2);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--text3);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .mentor-photo-placeholder svg {
-      opacity: 0.3;
-    }
-
     .mentor-badge {
       position: absolute;
       bottom: -1rem;
@@ -1130,6 +1108,33 @@
       padding: 0.3rem 0.8rem;
       border-radius: 980px;
       font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    /* ── EMPRESAS ── */
+    .empresas-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .empresas-label {
+      font-size: 0.72rem;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    .empresa-badge {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.8rem;
+      color: var(--text2);
       font-weight: 500;
     }
 
@@ -1197,7 +1202,6 @@
       <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary">
         Reserva una sesión gratuita
       </a>
-      <!-- NUEVO BOTÓN: Lead Magnet para capturar leads fríos -->
       <a href="De%20cero%20a%20developer%20-%20Zero2Dev.pdf" download class="btn btn-ghost">
         Descargar Roadmap Gratis
       </a>
@@ -1232,8 +1236,7 @@
       <div class="problem-item">
         <div class="problem-num">01</div>
         <h3>Sin dirección clara</h3>
-        <p>Tutoriales sin estructura, tecnologías que cambian, y ninguna ruta que te lleve de A a B de forma ordenada.
-        </p>
+        <p>Tutoriales sin estructura, tecnologías que cambian, y ninguna ruta que te lleve de A a B de forma ordenada.</p>
       </div>
       <div class="problem-item">
         <div class="problem-num">02</div>
@@ -1283,8 +1286,7 @@
             <div class="how-step-num">3</div>
             <div>
               <h3>Sesiones 1:1 en vivo</h3>
-              <p>Pair programming, code review, preguntas reales. Aprendes haciendo, con alguien que ya ha pasado por
-                ahí.</p>
+              <p>Pair programming, code review, preguntas reales. Aprendes haciendo, con alguien que ya ha pasado por ahí.</p>
             </div>
           </div>
           <div class="how-step">
@@ -1306,7 +1308,7 @@
         </div>
         <div class="visual-card">
           <div class="visual-card-label">Próxima sesión</div>
-          <div class="visual-card-val">Lunes · 19:00h</div>
+          <div class="visual-card-val">Martes · 18:00h</div>
         </div>
         <div class="visual-card">
           <div class="visual-card-label">Módulo actual</div>
@@ -1318,8 +1320,7 @@
         <div class="visual-card">
           <div class="visual-card-label">Último feedback del mentor</div>
           <div class="visual-card-val" style="font-size:0.875rem; font-weight:400; color:var(--text2); line-height:1.5">
-            "La estructura del agente está bien. La semana que viene trabajamos el manejo de errores y el logging en
-            producción."
+            "La estructura del agente está bien. La semana que viene trabajamos el manejo de errores y el logging en producción."
           </div>
         </div>
       </div>
@@ -1329,6 +1330,7 @@
   <div class="divider"></div>
 
   <!-- MENTOR -->
+  <!-- CAMBIO 2: Bio actualizada con experiencia real en Ahorramas y GeeksHubs -->
   <section class="section">
     <div class="mentor-wrap">
       <div class="mentor-photo-box">
@@ -1341,16 +1343,15 @@
       <div>
         <p class="eyebrow">Tu mentor</p>
         <div class="mentor-name">Raul Sánchez</div>
-        <div class="mentor-role">Fundador · Developer · Mentor</div>
+        <div class="mentor-role">Software Architect · Developer · Mentor</div>
         <p class="mentor-bio">
-          Desarrollador con experiencia en IA aplicada, backend con Node.js y arquitecturas fullstack.
-          Creé Zero2Dev porque vi de cerca la brecha que existe entre querer aprender a programar
-          y tener acceso a una formación que realmente funcione: personalizada, práctica
-          y con alguien que ya ha recorrido ese camino.
+          Software Architect en activo con experiencia en empresas como Ahorramas y GeeksHubs Academy.
+          Trabajo a diario con IA aplicada, backend con Node.js y arquitecturas fullstack en entornos reales de producción.
         </p>
         <p class="mentor-bio" style="margin-top:-1rem">
-          En cada sesión trabajo contigo directamente: revisamos tu código, desbloqueamos los
-          puntos donde te atascas y construimos proyectos reales desde el primer día.
+          Creé Zero2Dev porque vi de cerca la brecha entre querer aprender a programar
+          y tener acceso a formación que realmente funcione. En cada sesión trabajamos
+          directamente en tu código: revisamos, desbloqueamos y construimos desde el primer día.
           No hay grabaciones, no hay plantillas. Hay una persona que te conoce y sabe
           exactamente dónde ayudarte.
         </p>
@@ -1362,6 +1363,12 @@
           <span class="mentor-tag">Arquitectura backend</span>
           <span class="mentor-tag">Pair programming</span>
         </div>
+        <!-- Empresas donde ha trabajado -->
+        <div class="empresas-strip">
+          <span class="empresas-label">Experiencia en</span>
+          <span class="empresa-badge">Ahorramas</span>
+          <span class="empresa-badge">GeeksHubs Academy</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1369,11 +1376,12 @@
   <div class="divider"></div>
 
   <!-- PROYECTOS -->
+  <!-- CAMBIO 1: Trading Bot eliminado, sustituido por proyecto más creíble -->
   <section class="section" id="proyectos">
     <p class="eyebrow">Portfolio de referencia</p>
     <h2 class="section-title" style="margin-bottom:0.75rem">Código real. Soluciones reales.</h2>
     <p class="section-body" style="margin-bottom:3rem">
-      Estos son algunos de los sistemas que he construido y cuya arquitectura aprenderás a dominar.
+      Proyectos que he construido en producción y que aprenderás a dominar en las sesiones.
     </p>
     <div class="proyectos-grid">
       <div class="proyecto-card">
@@ -1387,23 +1395,23 @@
         <div class="proyecto-content">
           <div class="proyecto-tag">IA & Productivity</div>
           <h3>PR Companion AI</h3>
-          <p>Bot inteligente que analiza Pull Requests, redacta documentación automática y traduce cambios técnicos a
-            impacto de negocio para PMs.</p>
+          <p>Bot inteligente que analiza Pull Requests, redacta documentación automática y traduce cambios técnicos a impacto de negocio para PMs.</p>
         </div>
       </div>
 
+      <!-- Trading Bot eliminado: sustituido por proyecto de automatización de procesos -->
       <div class="proyecto-card">
         <div class="proyecto-img">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-            <polyline points="16 7 22 7 22 13" />
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M7 8h2l2 5 2-8 2 5h2"/>
           </svg>
         </div>
         <div class="proyecto-content">
-          <div class="proyecto-tag">Fintech & Logic</div>
-          <h3>Trading Strategy Bot</h3>
-          <p>Sistema automatizado capaz de analizar patrones de mercado complejos y ejecutar estrategias de trading con
-            alta precisión y baja latencia.</p>
+          <div class="proyecto-tag">Backend & Automatización</div>
+          <h3>Pipeline de Datos con IA</h3>
+          <p>Sistema de ingesta, procesamiento y análisis de datos con Node.js que integra modelos LLM para generar resúmenes e informes automáticos.</p>
         </div>
       </div>
 
@@ -1419,8 +1427,7 @@
         <div class="proyecto-content">
           <div class="proyecto-tag">Advanced AI</div>
           <h3>AI Voice Assistant</h3>
-          <p>Asistente de voz avanzado que utiliza modelos LLM para mantener conversaciones naturales y ejecutar tareas
-            complejas mediante comandos de voz.</p>
+          <p>Asistente de voz avanzado que utiliza modelos LLM para mantener conversaciones naturales y ejecutar tareas complejas mediante comandos de voz.</p>
         </div>
       </div>
     </div>
@@ -1439,8 +1446,7 @@
       <div class="ruta-card">
         <p class="ruta-eyebrow">Más solicitada</p>
         <h3>IA Developer</h3>
-        <p>Desarrolla aplicaciones reales con los modelos de inteligencia artificial más avanzados. Desde fundamentos
-          hasta agentes autónomos en producción.</p>
+        <p>Desarrolla aplicaciones reales con los modelos de inteligencia artificial más avanzados. Desde fundamentos hasta agentes autónomos en producción.</p>
         <div class="ruta-stack">
           <span class="stack-tag">Python</span>
           <span class="stack-tag">OpenAI</span>
@@ -1454,8 +1460,7 @@
       <div class="ruta-card">
         <p class="ruta-eyebrow">Alta demanda laboral</p>
         <h3>Backend Node.js</h3>
-        <p>Construye APIs robustas, gestiona bases de datos y despliega servicios en la nube. La base técnica que toda
-          empresa necesita.</p>
+        <p>Construye APIs robustas, gestiona bases de datos y despliega servicios en la nube. La base técnica que toda empresa necesita.</p>
         <div class="ruta-stack">
           <span class="stack-tag">JavaScript</span>
           <span class="stack-tag">Node.js</span>
@@ -1469,8 +1474,7 @@
       <div class="ruta-card">
         <p class="ruta-eyebrow">Ruta completa</p>
         <h3>Fullstack Developer</h3>
-        <p>Frontend, backend, bases de datos y despliegue. El perfil más versátil del mercado, con integración de IA
-          incluida en el stack final.</p>
+        <p>Frontend, backend, bases de datos y despliegue. El perfil más versátil del mercado, con integración de IA incluida en el stack final.</p>
         <div class="ruta-stack">
           <span class="stack-tag">React</span>
           <span class="stack-tag">Next.js</span>
@@ -1505,27 +1509,14 @@
         <p class="plan-desc">2 sesiones individuales al mes. El punto de partida para quien está empezando.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> 2 sesiones 1:1 en vivo (1h c/u)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Ruta de aprendizaje personalizada</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Chat con mentor (respuesta en 48h)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> 2 code reviews al mes</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Comunidad Discord</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Certificado digital</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> 2 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Ruta de aprendizaje personalizada</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Chat con mentor (respuesta en 48h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> 2 code reviews al mes</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Comunidad Discord</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Certificado digital</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión
-          gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión gratuita</a>
       </div>
 
       <div class="plan-card featured">
@@ -1535,37 +1526,19 @@
           <span class="amount">299</span>
           <span class="period">/ mes</span>
         </div>
-        <p class="plan-desc">4 sesiones mensuales. El equilibrio entre profundidad y coste para avanzar con
-          consistencia.</p>
+        <p class="plan-desc">4 sesiones mensuales. El equilibrio entre profundidad y coste para avanzar con consistencia.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> 4 sesiones 1:1 en vivo (1h c/u)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Ruta de aprendizaje personalizada</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Chat con mentor (respuesta en 24h)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Code reviews ilimitados</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> 2 proyectos guiados al mes</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Preparación de entrevistas</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Discord VIP + networking</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Certificado + badge LinkedIn</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> 4 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Ruta de aprendizaje personalizada</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Chat con mentor (respuesta en 24h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Code reviews ilimitados</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> 2 proyectos guiados al mes</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Preparación de entrevistas</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Discord VIP + networking</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Certificado + badge LinkedIn</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-fill">Reservar sesión
-          gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-fill">Reservar sesión gratuita</a>
       </div>
 
       <div class="plan-card">
@@ -1575,34 +1548,18 @@
           <span class="amount">499</span>
           <span class="period">/ mes</span>
         </div>
-        <p class="plan-desc">8 sesiones mensuales. Para quien quiere avanzar al máximo ritmo posible con soporte
-          prioritario.</p>
+        <p class="plan-desc">8 sesiones mensuales. Para quien quiere avanzar al máximo ritmo posible con soporte prioritario.</p>
         <div class="plan-divider"></div>
         <ul class="plan-features">
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> 8 sesiones 1:1 en vivo (1h c/u)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Roadmap profesional a medida</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Chat prioritario (respuesta en 12h)</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Code reviews ilimitados y prioritarios</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Proyectos sin límite</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Mock interviews técnicas</li>
-          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="2,5 4,7.5 8,3" />
-              </svg></span> Carta de recomendación</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> 8 sesiones 1:1 en vivo (1h c/u)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Roadmap profesional a medida</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Chat prioritario (respuesta en 12h)</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Code reviews ilimitados y prioritarios</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Proyectos sin límite</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Mock interviews técnicas</li>
+          <li><span class="feat-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2,5 4,7.5 8,3" /></svg></span> Carta de recomendación</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión
-          gratuita</a>
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="plan-btn plan-btn-line">Reservar sesión gratuita</a>
       </div>
 
     </div>
@@ -1614,8 +1571,7 @@
   <section class="section" id="recursos">
     <div class="recursos-container">
       <p class="eyebrow">Recursos gratuitos</p>
-      <h2 style="color:var(--white); font-size:1.75rem; font-weight:800; margin-bottom:1rem">Acelera tu carrera con IA
-      </h2>
+      <h2 style="color:var(--white); font-size:1.75rem; font-weight:800; margin-bottom:1rem">Acelera tu carrera con IA</h2>
       <p style="color:var(--text2); font-weight:300; max-width:600px; margin:0 auto">
         He preparado estos materiales exclusivos para ayudarte a dar el salto técnico que buscas, sin coste.
       </p>
@@ -1624,8 +1580,7 @@
           <span class="recurso-icon">🗺️</span>
           <h4>Roadmap IA 2026</h4>
           <p>La guía paso a paso para convertirte en IA Developer partiendo de Node.js o Python.</p>
-          <a href="De%20cero%20a%20developer%20-%20Zero2Dev.pdf" download class="plan-btn btn-small">Descargar
-            gratis</a>
+          <a href="De%20cero%20a%20developer%20-%20Zero2Dev.pdf" download class="plan-btn btn-small">Descargar gratis</a>
         </div>
         <div class="recurso-item">
           <span class="recurso-icon">📝</span>
@@ -1647,63 +1602,37 @@
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           ¿Necesito experiencia previa para empezar?
-          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
-              stroke-width="1.5">
-              <line x1="5" y1="1" x2="5" y2="9" />
-              <line x1="1" y1="5" x2="9" y2="5" />
-            </svg></span>
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="1" x2="5" y2="9" /><line x1="1" y1="5" x2="9" y2="5" /></svg></span>
         </button>
-        <div class="faq-a">No. Las rutas están diseñadas para cualquier punto de partida. En la sesión discovery
-          evaluamos tu nivel actual y construimos la ruta desde ahí, sin asumir conocimientos previos.</div>
+        <div class="faq-a">No. Las rutas están diseñadas para cualquier punto de partida. En la sesión discovery evaluamos tu nivel actual y construimos la ruta desde ahí, sin asumir conocimientos previos.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           ¿Hay permanencia o puedo cancelar cuando quiera?
-          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
-              stroke-width="1.5">
-              <line x1="5" y1="1" x2="5" y2="9" />
-              <line x1="1" y1="5" x2="9" y2="5" />
-            </svg></span>
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="1" x2="5" y2="9" /><line x1="1" y1="5" x2="9" y2="5" /></svg></span>
         </button>
-        <div class="faq-a">Sin permanencias. Cancelas cuando quieras con 7 días de antelación al siguiente ciclo de
-          facturación. Sin penalizaciones, sin preguntas.</div>
+        <div class="faq-a">Sin permanencias. Cancelas cuando quieras con 7 días de antelación al siguiente ciclo de facturación. Sin penalizaciones, sin preguntas.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           ¿Cómo se coordinan las sesiones?
-          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
-              stroke-width="1.5">
-              <line x1="5" y1="1" x2="5" y2="9" />
-              <line x1="1" y1="5" x2="9" y2="5" />
-            </svg></span>
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="1" x2="5" y2="9" /><line x1="1" y1="5" x2="9" y2="5" /></svg></span>
         </button>
-        <div class="faq-a">A través de Calendly, en el horario que mejor encaje con tu agenda. Las sesiones son por
-          videollamada (Google Meet) con pantalla compartida para pair programming y revisión de código en tiempo real.
-        </div>
+        <div class="faq-a">A través de Calendly, en el horario que mejor encaje con tu agenda. Las sesiones son por videollamada (Google Meet) con pantalla compartida para pair programming y revisión de código en tiempo real.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           ¿Cuánto tiempo necesito dedicar por semana?
-          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
-              stroke-width="1.5">
-              <line x1="5" y1="1" x2="5" y2="9" />
-              <line x1="1" y1="5" x2="9" y2="5" />
-            </svg></span>
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="1" x2="5" y2="9" /><line x1="1" y1="5" x2="9" y2="5" /></svg></span>
         </button>
-        <div class="faq-a">El mínimo recomendado son 5 horas semanales, incluyendo la sesión con el mentor. Con 8-10
-          horas verás un progreso claramente más rápido. La consistencia importa más que la intensidad.</div>
+        <div class="faq-a">El mínimo recomendado son 5 horas semanales, incluyendo la sesión con el mentor. Con 8-10 horas verás un progreso claramente más rápido. La consistencia importa más que la intensidad.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           ¿Puedo cambiar de ruta si me arrepiento?
-          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor"
-              stroke-width="1.5">
-              <line x1="5" y1="1" x2="5" y2="9" />
-              <line x1="1" y1="5" x2="9" y2="5" />
-            </svg></span>
+          <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="1" x2="5" y2="9" /><line x1="1" y1="5" x2="9" y2="5" /></svg></span>
         </button>
-        <div class="faq-a">Sí, en cualquier momento y sin penalización. Si tras las primeras sesiones ves que otra ruta
-          encaja mejor con tus objetivos, hacemos el cambio y ajustamos el plan.</div>
+        <div class="faq-a">Sí, en cualquier momento y sin penalización. Si tras las primeras sesiones ves que otra ruta encaja mejor con tus objetivos, hacemos el cambio y ajustamos el plan.</div>
       </div>
     </div>
   </section>
@@ -1714,10 +1643,8 @@
   <section class="cta-final">
     <p class="eyebrow">Primer paso</p>
     <h2>La sesión<br />discovery es gratis.</h2>
-    <p>15 minutos. Sin compromiso. Sin tarjeta de crédito.<br />Sólo una conversación sobre lo que quieres conseguir.
-    </p>
-    <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary"
-      style="font-size:1rem; padding:1rem 2rem;">
+    <p>15 minutos. Sin compromiso. Sin tarjeta de crédito.<br />Sólo una conversación sobre lo que quieres conseguir.</p>
+    <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:1rem 2rem;">
       Reservar sesión gratuita
     </a>
     <br />
@@ -1732,12 +1659,13 @@
   </section>
 
   <!-- FOOTER -->
+  <!-- CAMBIO 3: Email profesional actualizado -->
   <footer>
     <div class="footer-logo">Zero<span>2</span>Dev</div>
     <div class="footer-links">
       <a href="https://instagram.com/zero_2_dev_" target="_blank">Instagram</a>
       <a href="https://calendly.com/92sanchez-raul" target="_blank">Contacto</a>
-      <a href="mailto:92sanchez.raul@gmail.com">Email</a>
+      <a href="mailto:hola@zero2dev.com">Email</a>
     </div>
   </footer>
 
