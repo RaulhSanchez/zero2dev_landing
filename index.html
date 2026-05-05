@@ -973,11 +973,18 @@
       line-height: 1.7;
       font-weight: 300;
       padding-bottom: 1.5rem;
-      display: none;
+      /* Visible en HTML para SEO, oculto visualmente hasta abrir */
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height .3s ease, opacity .3s ease, padding .3s ease;
+      padding-bottom: 0;
     }
 
     .faq-item.open .faq-a {
-      display: block;
+      max-height: 300px;
+      opacity: 1;
+      padding-bottom: 1.5rem;
     }
 
     /* ── CTA FINAL ── */
@@ -1330,7 +1337,6 @@
   <div class="divider"></div>
 
   <!-- MENTOR -->
-  <!-- CAMBIO 2: Bio actualizada con experiencia real en Ahorramas y GeeksHubs -->
   <section class="section">
     <div class="mentor-wrap">
       <div class="mentor-photo-box">
@@ -1345,7 +1351,7 @@
         <div class="mentor-name">Raul Sánchez</div>
         <div class="mentor-role">Software Architect · Developer · Mentor</div>
         <p class="mentor-bio">
-          Software Architect en activo con experiencia en empresas como Ahorramas y GeeksHubs Academy.
+          Software Architect en activo con años de experiencia en el sector tech.
           Trabajo a diario con IA aplicada, backend con Node.js y arquitecturas fullstack en entornos reales de producción.
         </p>
         <p class="mentor-bio" style="margin-top:-1rem">
@@ -1362,12 +1368,6 @@
           <span class="mentor-tag">Python</span>
           <span class="mentor-tag">Arquitectura backend</span>
           <span class="mentor-tag">Pair programming</span>
-        </div>
-        <!-- Empresas donde ha trabajado -->
-        <div class="empresas-strip">
-          <span class="empresas-label">Experiencia en</span>
-          <span class="empresa-badge">Ahorramas</span>
-          <span class="empresa-badge">GeeksHubs Academy</span>
         </div>
       </div>
     </div>
@@ -1635,6 +1635,25 @@
         <div class="faq-a">Sí, en cualquier momento y sin penalización. Si tras las primeras sesiones ves que otra ruta encaja mejor con tus objetivos, hacemos el cambio y ajustamos el plan.</div>
       </div>
     </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SEO TEXT — indexable por Google -->
+  <section class="section" style="max-width:780px; margin:0 auto; padding:4rem 1.5rem;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1.25rem; color:var(--text1);">Mentoría de programación 1:1 en español</h2>
+    <p style="color:var(--text2); line-height:1.8; font-size:0.95rem; margin-bottom:1rem;">
+      Zero2Dev es una academia de mentoría personalizada para personas que quieren aprender a programar con IA, Node.js y Fullstack desde cero o mejorar su nivel técnico. A diferencia de los bootcamps o los cursos grabados, cada sesión es contigo y adaptada exactamente a tu situación, tus objetivos y tu ritmo.
+    </p>
+    <p style="color:var(--text2); line-height:1.8; font-size:0.95rem; margin-bottom:1rem;">
+      Si quieres aprender a programar desde cero, cambiar de carrera al mundo tech, dominar la programación con inteligencia artificial o conseguir tu primer trabajo como developer, Zero2Dev te da el plan concreto y el acompañamiento semanal que necesitas para llegar.
+    </p>
+    <p style="color:var(--text2); line-height:1.8; font-size:0.95rem; margin-bottom:1rem;">
+      Nuestras rutas de aprendizaje cubren las tecnologías más demandadas por las empresas en 2026: IA aplicada con Python y LangChain, backend con Node.js y Express, y desarrollo Fullstack con React y Next.js. Cada ruta tiene una duración estimada de 4 a 6 meses con sesiones semanales en vivo, revisión de código y proyectos reales desplegados.
+    </p>
+    <p style="color:var(--text2); line-height:1.8; font-size:0.95rem;">
+      La primera sesión de descubrimiento es completamente gratuita y sin compromiso. En 15 minutos evaluamos tu punto de partida, tus objetivos y si Zero2Dev es el camino correcto para ti.
+    </p>
   </section>
 
   <div class="divider"></div>
