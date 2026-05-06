@@ -4,10 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cómo aprender programación con IA en 2026 — Blog Zero2Dev</title>
-  <meta name="description" content="Descubre el método paso a paso para aprender a programar utilizando la inteligencia artificial como catalizador de tu carrera.">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="description" content="Descubre el método paso a paso para aprender a programar utilizando la inteligencia artificial como catalizador de tu carrera en 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #000000; --bg2: #0A0A0A; --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.08); --border2: rgba(255, 255, 255, 0.12);
+      --text: #F5F5F7; --text2: #A1A1A6; --text3: #6E6E73;
+      --accent: #2D5BE3; --accent2: #4A7AFF; --white: #FFFFFF; --radius: 18px;
+    }
+    body {
+      font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text);
+      line-height: 1.8; -webkit-font-smoothing: antialiased; font-size: 18px;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 52px;
+      background: rgba(0, 0, 0, 0.72); backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border); display: flex; align-items: center;
+      padding: 0 max(24px, calc(50% - 540px)); justify-content: space-between;
+    }
+    .nav-logo { font-weight: 600; color: var(--white); text-decoration: none; font-size: 1rem; }
+    .nav-logo span { color: var(--accent2); }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.8rem; }
+    .nav-cta { background: var(--accent); color: var(--white) !important; padding: 0.35rem 1rem; border-radius: 980px; font-weight: 500; }
+    
+    .article-container { max-width: 680px; margin: 0 auto; padding: 8rem 1.5rem 8rem; }
+    .eyebrow { font-size: 0.75rem; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; display: block; }
+    .title { font-size: clamp(2.25rem, 6vw, 3.5rem); font-weight: 800; color: var(--white); letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 2rem; }
+    
+    .content h2 { font-size: 1.75rem; color: var(--white); margin: 3rem 0 1.25rem; letter-spacing: -0.5px; }
+    .content p { margin-bottom: 1.5rem; color: var(--text); font-weight: 300; }
+    .content ul { margin: 0 0 2rem 1.5rem; color: var(--text2); }
+    .content li { margin-bottom: 0.75rem; }
+    
+    .cta-box {
+      margin-top: 5rem; padding: 2.5rem; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); text-align: center;
+    }
+    .btn { display: inline-block; background: var(--accent); color: var(--white); padding: 1rem 2rem; border-radius: 980px; text-decoration: none; font-weight: 600; margin-top: 1.5rem; transition: transform 0.2s; }
+    .btn:hover { transform: scale(1.03); }
+
+    footer { border-top: 1px solid var(--border); padding: 3rem max(24px, calc(50% - 540px)); text-align: center; color: var(--text3); font-size: 0.8rem; }
+    @media (max-width: 640px) { .nav-links { display: none; } }
+  </style>
 </head>
 <body>
 
@@ -22,45 +64,40 @@
   </nav>
 
   <article class="article-container">
-    <header class="article-header">
-      <p class="eyebrow">Guías de Carrera</p>
-      <h1 class="article-title">Cómo aprender programación con IA en 2026: Guía definitiva</h1>
-      <p style="color:var(--text2); font-size:1.1rem;">Por Raul Sánchez · 6 de Mayo, 2026</p>
+    <header>
+      <span class="eyebrow">Guía 2026</span>
+      <h1 class="title">Cómo aprender programación con IA en 2026: Guía definitiva</h1>
+      <p style="color:var(--text3); font-size:0.9rem; margin-bottom:3rem;">Por Raul Sánchez · 6 de Mayo, 2026 · 5 min de lectura</p>
     </header>
 
-    <div class="article-content">
-      <p>El mundo de la programación ha dado un giro de 180 grados en los últimos dos años. Ya no se trata de memorizar sintaxis o pasar horas buscando un error en Stack Overflow. En 2026, el programador exitoso es aquel que sabe **orquestar la inteligencia artificial**.</p>
+    <div class="content">
+      <p>El mundo del desarrollo ha cambiado radicalmente. En 2026, ya no aprendemos a programar para escribir código, sino para **resolver problemas orquestando inteligencia artificial**.</p>
       
-      <h2>¿Ha muerto el aprendizaje tradicional?</h2>
-      <p>No, pero ha evolucionado. Aprender los fundamentos sigue siendo vital para entender "por qué" las cosas funcionan. Sin embargo, la forma de "hacer" ha cambiado. Hoy, usar herramientas como Cursor o Copilot no es hacer trampas; es ser eficiente.</p>
+      <h2>1. Entiende la base (pero no te obsesiones)</h2>
+      <p>Sigue siendo vital entender qué es una variable, un bucle o una API. Pero ya no necesitas pasar meses memorizando la sintaxis de CSS. La IA lo hace por ti. Tu trabajo es saber qué pedir y, sobre todo, saber si lo que te devuelve es correcto. En nuestras <a href="../index.html#rutas" style="color:var(--accent2); text-decoration:underline;">rutas de aprendizaje</a> nos enfocamos precisamente en esta eficiencia.</p>
 
-      <h2>El nuevo Roadmap del desarrollador</h2>
-      <p>Para destacar hoy en día, te recomiendo este enfoque:</p>
-      <ul style="margin-left:1.5rem; margin-bottom:1.5rem; color:var(--text2);">
-        <li><strong>Fundamentos sólidos:</strong> Lógica de programación y estructuras de datos.</li>
-        <li><strong>Prompt Engineering aplicado:</strong> Aprender a pedir código de calidad a los LLMs.</li>
-        <li><strong>Revisión crítica:</strong> La IA se equivoca. Tu valor está en detectar esos fallos.</li>
-        <li><strong>Arquitectura:</strong> La IA escribe funciones; tú diseñas sistemas.</li>
-      </ul>
+      <h2>2. Adopta el "Pair Programming" desde el día 1</h2>
+      <p>No uses la IA solo para copiar y pegar. Úsala para preguntarle: <em>"¿Por qué has usado este método aquí?"</em> o <em>"¿Hay una forma más eficiente de estructurar este componente?"</em>. Trátala como a un mentor senior que nunca se cansa de tus preguntas.</p>
+
+      <h2>3. Foco en la arquitectura y el contexto</h2>
+      <p>La IA es excelente escribiendo funciones aisladas, pero suele fallar en entender cómo encajan todas las piezas de un sistema complejo. Tu valor diferencial en 2026 está en la **visión global** y en la arquitectura limpia. Es lo que diferencia a un "copiapasta" de un <a href="../index.html#rutas" style="color:var(--accent2); text-decoration:underline;">desarrollador Fullstack real</a>.</p>
 
       <h2>Conclusión</h2>
-      <p>La IA no va a quitarle el trabajo a los programadores, pero los programadores que usan IA sí se lo quitarán a los que no lo hacen. En **Zero2Dev**, nos enfocamos precisamente en esto: en que domines las herramientas del futuro hoy mismo.</p>
+      <p>Aprender a programar hoy es más emocionante que nunca porque la barrera de entrada ha bajado, pero el techo de lo que puedes construir ha subido hasta el infinito. No lo hagas solo.</p>
     </div>
 
-    <div style="margin-top:4rem; padding:2rem; background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); text-align:center;">
-      <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres acelerar tu aprendizaje?</h3>
-      <p style="color:var(--text2); margin-bottom:1.5rem;">Mis mentorías 1:1 están diseñadas para llevarte de cero a profesional usando estas tecnologías.</p>
-      <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn btn-primary">Reserva tu sesión gratuita</a>
+    <div class="cta-box">
+      <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres pasar de cero a profesional?</h3>
+      <p style="color:var(--text2); font-size:0.95rem;">Deja de perderte en tutoriales infinitos. Diseñamos tu hoja de ruta personalizada y te acompañamos cada semana.</p>
+      <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+        <a href="https://calendly.com/92sanchez-raul" target="_blank" class="btn">Reserva sesión gratuita</a>
+        <a href="../index.html#planes" class="btn" style="background:transparent; border:1px solid var(--border2);">Ver planes de mentoría</a>
+      </div>
     </div>
   </article>
 
   <footer>
-    <a href="../index.html" class="footer-logo">Zero<span>2</span>Dev</a>
-    <div class="footer-links">
-      <a href="../index.html">Inicio</a>
-      <a href="index.html">Blog</a>
-      <a href="https://instagram.com/zero_2_dev_" target="_blank">Instagram</a>
-    </div>
+    <p>&copy; 2026 Zero2Dev. Todos los derechos reservados.</p>
   </footer>
 
 </body>
