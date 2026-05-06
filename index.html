@@ -1687,11 +1687,11 @@
         <div class="recurso-item">
           <span class="recurso-icon">🗺️</span>
           <h4>Manual IA 2026</h4>
-          <p id="manual-status">La guía paso a paso para convertirte en IA Developer. Déjanos tu email y te lo enviamos.</p>
+          <p id="manual-status">Introduce tu email y te enviaremos el acceso al manual de forma inmediata.</p>
           
           <form id="landing-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-            <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required style="padding:0.75rem 1rem; border-radius:10px; border:1px solid var(--border); background:rgba(0,0,0,0.2); color:white; font-family:inherit;">
-            <button type="submit" class="plan-btn btn-small" id="landing-btn" style="background:var(--accent); color:white; border:none; cursor:pointer; width:100%;">Descargar Manual Gratis</button>
+            <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+            <button type="submit" class="btn btn-primary" id="landing-btn" style="width:100%; justify-content:center; padding:1rem; border:none; cursor:pointer;">Enviar Manual</button>
           </form>
 
           <script>
@@ -1704,8 +1704,8 @@
               btn.innerText = 'Enviando...';
               btn.disabled = true;
 
-              // Mandar a Formspree (Cambia TU_ID_AQUI por tu ID real)
-              fetch('https://formspree.io/f/TU_ID_AQUI', {
+              // Mandar a Formspree (ID Real del usuario)
+              fetch('https://formspree.io/f/xykojvky', {
                 method: 'POST',
                 body: JSON.stringify({ email: email }),
                 headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
