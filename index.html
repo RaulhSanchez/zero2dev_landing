@@ -1687,11 +1687,42 @@
         <div class="recurso-item">
           <span class="recurso-icon">🗺️</span>
           <h4>Manual IA 2026</h4>
-          <p>La guía paso a paso para convertirte en IA Developer. Déjanos tu email y te lo enviamos.</p>
-          <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-            <input type="email" name="email" placeholder="Tu mejor email" required style="padding:0.75rem 1rem; border-radius:10px; border:1px solid var(--border); background:rgba(0,0,0,0.2); color:white; font-family:inherit;">
-            <button type="submit" class="plan-btn btn-small" style="background:var(--accent); color:white; border:none; cursor:pointer; width:100%;">Enviar Manual al Email</button>
+          <p id="manual-status">La guía paso a paso para convertirte en IA Developer. Déjanos tu email y te lo enviamos.</p>
+          
+          <form id="landing-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+            <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required style="padding:0.75rem 1rem; border-radius:10px; border:1px solid var(--border); background:rgba(0,0,0,0.2); color:white; font-family:inherit;">
+            <button type="submit" class="plan-btn btn-small" id="landing-btn" style="background:var(--accent); color:white; border:none; cursor:pointer; width:100%;">Descargar Manual Gratis</button>
           </form>
+
+          <script>
+            document.getElementById('landing-form').addEventListener('submit', function(e) {
+              e.preventDefault();
+              const btn = document.getElementById('landing-btn');
+              const status = document.getElementById('manual-status');
+              const email = document.getElementById('landing-email').value;
+              
+              btn.innerText = 'Enviando...';
+              btn.disabled = true;
+
+              // Mandar a Formspree (Cambia TU_ID_AQUI por tu ID real)
+              fetch('https://formspree.io/f/TU_ID_AQUI', {
+                method: 'POST',
+                body: JSON.stringify({ email: email }),
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+              }).finally(() => {
+                status.innerHTML = '<span style="color:#4caf50">¡Éxito! Tu descarga está comenzando...</span>';
+                btn.innerText = '¡Enviado!';
+                
+                // Iniciar descarga
+                const link = document.createElement('a');
+                link.href = 'manual-de-cero-a-developer.pdf';
+                link.download = 'manual-de-cero-a-developer.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              });
+            });
+          </script>
         </div>
         <div class="recurso-item">
           <span class="recurso-icon">📝</span>
