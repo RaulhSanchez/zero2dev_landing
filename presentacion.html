@@ -211,6 +211,10 @@
         player.style.display = 'block';
         ctaPago.style.display = 'flex';
         
+        // AUTO-PLAY DEL VÍDEO
+        const video = document.getElementById('main-video');
+        video.play();
+        
         status.innerHTML = '<span style="color:#4caf50">¡Acceso concedido! El manual se está descargando...</span>';
         btn.innerText = '¡Acceso Desbloqueado!';
         
