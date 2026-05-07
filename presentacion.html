@@ -158,14 +158,11 @@
 
       <!-- EL VÍDEO (OCULTO INICIALMENTE) -->
       <div id="video-player" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
-        <video id="main-video" width="100%" height="100%" controls playsinline preload="auto" style="width:100%; height:100%; object-fit:contain; background:#000;">
-          <source src="masterclass/masterclass.mp4" type="video/mp4">
-          <source src="masterclass/masterclass.mp4" type="video/quicktime">
-          Tu navegador no soporta el formato de vídeo.
-        </video>
-        <div id="video-fallback" style="display:none; position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.7); padding:5px 10px; border-radius:5px; font-size:0.8rem; color:var(--text2);">
-          ¿Problemas con el vídeo? <a href="masterclass/masterclass.mp4" target="_blank" style="color:var(--accent);">Haz clic aquí para abrirlo directamente</a>
-        </div>
+        <iframe id="yt-player" width="100%" height="100%" 
+          src="https://www.youtube.com/embed/YBwxpyG63H0?rel=0&enablejsapi=1" 
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+          style="width:100%; height:100%; border-radius:var(--radius);">
+        </iframe>
       </div>
     </div>
 
@@ -211,13 +208,10 @@
         overlay.style.display = 'none';
         player.style.display = 'block';
         afterCta.style.display = 'block';
-        document.getElementById('video-fallback').style.display = 'block';
         
-        const video = document.getElementById('main-video');
-        video.muted = true; // Forzar inicio
-        video.play().catch(() => {
-          console.log("Auto-play prevenido por el navegador");
-        });
+        // AUTO-PLAY DE YOUTUBE
+        const iframe = document.getElementById('yt-player');
+        iframe.src += "&autoplay=1";
         
         // Iniciar descarga del PDF
         const link = document.createElement('a');
