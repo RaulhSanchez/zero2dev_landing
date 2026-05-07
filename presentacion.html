@@ -163,10 +163,13 @@
           <source src="masterclass/masterclass.mp4" type="video/quicktime">
           Tu navegador no soporta el formato de vídeo.
         </video>
+        <div id="video-fallback" style="display:none; position:absolute; bottom:10px; left:10px; background:rgba(0,0,0,0.7); padding:5px 10px; border-radius:5px; font-size:0.8rem; color:var(--text2);">
+          ¿Problemas con el vídeo? <a href="masterclass/masterclass.mp4" target="_blank" style="color:var(--accent);">Haz clic aquí para abrirlo directamente</a>
+        </div>
       </div>
     </div>
 
-    <div class="content-grid">
+    <div class="content-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
       <div class="features">
         <h3>¿Qué vas a descubrir?</h3>
         <ul>
@@ -177,16 +180,12 @@
         </ul>
       </div>
 
-      <div class="form-card" id="form-section">
-        <h3>Accede a la Masterclass Gratis</h3>
-        <p id="status-text">Introduce tu email para desbloquear el acceso inmediato y el Manual de IA.</p>
-        
-        <form id="presentation-form">
-          <input type="email" id="user-email" placeholder="Tu mejor email" required>
-          <button type="submit" class="btn" id="submit-btn">Desbloquear Masterclass Ahora</button>
-        </form>
-
-        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary" id="cta-pago" style="display:none; margin-top:1rem; width:100%; justify-content:center;">Reservar Diagnóstico (29€)</a>
+      <div id="after-video-cta" style="display:none; text-align:center; margin-top:2rem;">
+        <h3 style="color:white; margin-bottom:1rem;">¿Listo para dar el siguiente paso?</h3>
+        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary" style="padding:1.2rem 2.5rem; font-size:1.1rem; box-shadow: 0 10px 30px rgba(45, 91, 227, 0.4);">
+          Reservar mi Sesión Diagnóstico (29€)
+        </a>
+        <p style="color:var(--text2); font-size:0.9rem; margin-top:1rem;">Analizaremos tu caso real y trazaremos tu ruta personalizada.</p>
       </div>
     </div>
   </div>
@@ -197,10 +196,9 @@
 
   <script>
     function unlockContent(email, btn) {
-      const status = document.getElementById('status-text');
       const overlay = document.getElementById('video-overlay');
       const player = document.getElementById('video-player');
-      const ctaPago = document.getElementById('cta-pago');
+      const afterCta = document.getElementById('after-video-cta');
       
       btn.innerText = 'Verificando...';
       btn.disabled = true;
@@ -212,14 +210,16 @@
       }).then(() => {
         overlay.style.display = 'none';
         player.style.display = 'block';
-        ctaPago.style.display = 'flex';
+        afterCta.style.display = 'block';
+        document.getElementById('video-fallback').style.display = 'block';
         
         const video = document.getElementById('main-video');
-        video.play();
+        video.muted = true; // Forzar inicio
+        video.play().catch(() => {
+          console.log("Auto-play prevenido por el navegador");
+        });
         
-        status.innerHTML = '<span style="color:#4caf50">¡Acceso concedido! Descargando manual...</span>';
-        btn.innerText = '¡Desbloqueado!';
-        
+        // Iniciar descarga del PDF
         const link = document.createElement('a');
         link.href = 'z2d-manual-v1-secure.pdf';
         link.download = 'z2d-manual-v1-secure.pdf';
@@ -236,12 +236,6 @@
     document.getElementById('overlay-form').addEventListener('submit', function(e) {
       e.preventDefault();
       unlockContent(document.getElementById('overlay-email').value, document.getElementById('overlay-btn'));
-    });
-
-    // Formulario de abajo
-    document.getElementById('presentation-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      unlockContent(document.getElementById('user-email').value, document.getElementById('submit-btn'));
     });
   </script>
 
