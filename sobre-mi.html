@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mí — La historia detrás de Zero2Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --accent: #2D5BE3;
+      --white: #FFFFFF;
+      --radius: 20px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.8; padding-top:80px; }
+    
+    nav { position:fixed; top:0; left:0; right:0; height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000; border-bottom:1px solid var(--border); }
+    .logo { font-weight:800; font-size:1.5rem; color:var(--white); text-decoration:none; }
+    .nav-links { display:flex; gap:2rem; align-items:center; list-style:none; }
+    .nav-links a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-cta { background:var(--accent); color:white !important; padding:0.6rem 1.2rem; border-radius:980px; font-weight:600; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 80px 1.5rem; }
+    .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
+    h1 { font-size: 3.5rem; font-weight: 800; color: var(--white); margin-bottom: 2rem; letter-spacing: -2px; line-height: 1.1; }
+    
+    .story-section { margin-bottom: 4rem; }
+    .story-section h2 { color: var(--white); font-size: 1.75rem; margin-bottom: 1.5rem; font-weight: 700; }
+    .story-section p { color: var(--text2); font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .highlight { color: var(--white); font-weight: 600; }
+
+    .image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 3rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 5rem;
+    }
+    .cta-box h3 { font-size: 2rem; color: var(--white); margin-bottom: 1rem; }
+    .cta-btn { 
+      display: inline-block; 
+      background: var(--accent); 
+      color: white; 
+      padding: 1rem 2.5rem; 
+      border-radius: 12px; 
+      text-decoration: none; 
+      font-weight: 700; 
+      margin-top: 1.5rem; 
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.9; }
+
+    footer { padding:4rem 5%; border-top:1px solid var(--border); text-align:center; color:var(--text3); font-size:0.8rem; margin-top:4rem; }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .cta-box { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+    <ul class="nav-links">
+      <li><a href="/planes">Planes</a></li>
+      <li><a href="/presentacion">Presentación</a></li>
+      <li><a href="/sobre-mi">Sobre mí</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta">Sesión Diagnóstico (29€)</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <span class="eyebrow">La historia</span>
+    <h1>De picar código a mentor de IA.</h1>
+
+    <div class="image-placeholder">
+      <!-- PON AQUÍ TU FOTO TRABAJANDO O UNA FOTO PERSONAL -->
+      <img src="raul.jpg" alt="Raúl Huete">
+    </div>
+
+    <section class="story-section">
+      <h2>El inicio: Frustración y código infinito</h2>
+      <p>Mi historia no empezó con grandes éxitos, sino con <span class="highlight">muchas noches frente a una pantalla negra</span>, saltando de un tutorial de YouTube a otro, sintiendo que por mucho que estudiara, nunca sabía lo suficiente para las empresas de verdad.</p>
+      <p>Aprendí por las malas. Cometí todos los errores posibles. Pero eso me dio algo que ningún curso de universidad te da: <span class="highlight">experiencia real en las trincheras.</span></p>
+    </section>
+
+    <section class="story-section">
+      <h2>El momento en que todo cambió</h2>
+      <p>Hace un par de años, la Inteligencia Artificial entró en mi flujo de trabajo. Al principio tuve miedo, como todos. Pensé: <em>"¿Se ha acabado mi carrera?"</em>.</p>
+      <p>Pero pronto me di cuenta de la realidad: La IA no me iba a sustituir, me iba a hacer <span class="highlight">imparable</span>. Empecé a construir aplicaciones en días que antes tardaba meses. Entendí que las reglas del juego habían cambiado para siempre.</p>
+    </section>
+
+    <section class="story-section">
+      <h2>Por qué creé Zero2Dev</h2>
+      <p>Miré a mi alrededor y vi que la formación tradicional seguía enseñando como si estuviéramos en 2010. Bootcamps de 6.000€ que te lanzan contenido genérico sin acompañamiento real.</p>
+      <p><span class="highlight">Zero2Dev es la academia que yo hubiera necesitado cuando empecé.</span> Un lugar donde no eres un número, sino un desarrollador con nombre y apellidos al que acompaño personalmente para que domine las herramientas que realmente importan hoy.</p>
+    </section>
+
+    <div class="cta-box">
+      <h3>¿Hablamos de tu futuro?</h3>
+      <p>No busco miles de alumnos. Busco a pocas personas que vayan en serio y quieran dar un salto cuántico en su carrera.</p>
+      <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="cta-btn">Reservar mi Sesión de Diagnóstico</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Zero2Dev — Mentoría de programación premium
+  </footer>
+
+</body>
+</html>
