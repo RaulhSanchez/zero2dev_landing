@@ -141,17 +141,22 @@
     <h1 class="title">Cómo dominar la programación con IA en 2026</h1>
     <p class="subtitle">En este vídeo te explico el roadmap exacto que usamos con nuestros alumnos para que consigan resultados en tiempo récord.</p>
 
-    <div class="video-container">
-      <!-- CUANDO TENGAS EL VIDEO, SUSTITUYE ESTE DIV POR EL IFRAME DE YOUTUBE/VIMEO -->
-      <div class="video-placeholder">
-        <div style="font-size: 4rem; margin-bottom: 1rem;">🎬</div>
-        <h2 style="color:white">Tu vídeo irá aquí</h2>
-        <p style="max-width:300px">Sustituye este bloque por el código de inserción de YouTube o Vimeo.</p>
+    <div class="video-container" id="video-gate-container">
+      <!-- VÍDEO BLOQUEADO -->
+      <div id="video-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; backdrop-filter:blur(10px);">
+        <div style="font-size:3rem; margin-bottom:1rem;">🔒</div>
+        <h2 style="color:white; margin-bottom:1rem;">Contenido Protegido</h2>
+        <p style="color:var(--text2); max-width:400px; margin-bottom:2rem;">Introduce tu email en el formulario de abajo para desbloquear la Masterclass y descargar el Manual de IA.</p>
+        <a href="#presentation-form" class="btn" style="width:auto; padding:0.8rem 2rem;">Ir al formulario</a>
       </div>
-      
-      <!-- Ejemplo de código de YouTube:
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TU_VIDEO_ID?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
-      -->
+
+      <!-- EL VÍDEO (OCULTO INICIALMENTE) -->
+      <div id="video-player" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
+        <!-- SUSTITUYE ESTE IFRAME CUANDO TENGAS EL VÍDEO -->
+        <div style="width:100%; height:100%; background:var(--bg2); display:flex; align-items:center; justify-content:center;">
+             <h2 style="color:var(--accent)">[ Aquí aparecerá tu Masterclass ]</h2>
+        </div>
+      </div>
     </div>
 
     <div class="content-grid">
@@ -165,16 +170,16 @@
         </ul>
       </div>
 
-      <div class="form-card">
-        <h3>Descarga el Manual Completo</h3>
-        <p id="status-text">Únete a +500 personas que ya están transformando su carrera.</p>
+      <div class="form-card" id="form-section">
+        <h3>Accede a la Masterclass Gratis</h3>
+        <p id="status-text">Introduce tu email para desbloquear el acceso inmediato y el Manual de IA.</p>
         
         <form id="presentation-form">
           <input type="email" id="user-email" placeholder="Tu mejor email" required>
-          <button type="submit" class="btn" id="submit-btn">Enviar Manual y Ver Acceso</button>
+          <button type="submit" class="btn" id="submit-btn">Desbloquear Masterclass Ahora</button>
         </form>
 
-        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary" style="margin-top:1rem; width:100%; display:flex; justify-content:center;">Reservar Diagnóstico (29€)</a>
+        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary" id="cta-pago" style="display:none; margin-top:1rem; width:100%; justify-content:center;">Reservar Diagnóstico (29€)</a>
       </div>
     </div>
   </div>
@@ -189,26 +194,40 @@
       const btn = document.getElementById('submit-btn');
       const status = document.getElementById('status-text');
       const email = document.getElementById('user-email').value;
+      const overlay = document.getElementById('video-overlay');
+      const player = document.getElementById('video-player');
+      const ctaPago = document.getElementById('cta-pago');
       
-      btn.innerText = 'Enviando...';
+      btn.innerText = 'Verificando...';
       btn.disabled = true;
 
-      // Usando tu ID de Formspree real
       fetch('https://formspree.io/f/xykojvky', {
         method: 'POST',
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({ email: email, source: 'Masterclass-Gate' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-      }).finally(() => {
-        status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga del manual...</span>';
-        btn.innerText = '¡Enviado!';
+      }).then(() => {
+        // ACCIÓN: DESBLOQUEAR VÍDEO
+        overlay.style.display = 'none';
+        player.style.display = 'block';
+        ctaPago.style.display = 'flex';
         
-        // Iniciar descarga automática del PDF
+        status.innerHTML = '<span style="color:#4caf50">¡Acceso concedido! El manual se está descargando...</span>';
+        btn.innerText = '¡Acceso Desbloqueado!';
+        
+        // Scroll suave al vídeo
+        document.getElementById('video-gate-container').scrollIntoView({ behavior: 'smooth' });
+
+        // Iniciar descarga del PDF
         const link = document.createElement('a');
         link.href = 'z2d-manual-v1-secure.pdf';
         link.download = 'z2d-manual-v1-secure.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+      }).catch(() => {
+        status.innerText = 'Error al verificar. Inténtalo de nuevo.';
+        btn.innerText = 'Reintentar';
+        btn.disabled = false;
       });
     });
   </script>
