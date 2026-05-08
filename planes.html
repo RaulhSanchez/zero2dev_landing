@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planes de Entrenamiento — Zero2Dev</title>
+  <title>Planes — Zero2Dev</title>
   <link rel="canonical" href="https://zero2dev.es/planes" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,42 +20,228 @@
       --white: #FFFFFF;
       --radius: 20px;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; padding-top:80px; }
-    
-    nav { position:fixed; top:0; left:0; right:0; height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000; border-bottom:1px solid var(--border); }
-    .logo { font-weight:800; font-size:1.5rem; color:var(--white); text-decoration:none; }
-    .nav-links { display:flex; gap:2rem; align-items:center; list-style:none; }
-    .nav-links a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
-    .nav-links a:hover { color:var(--white); }
-    .nav-cta { background:var(--accent); color:white !important; padding:0.6rem 1.2rem; border-radius:980px; font-weight:600; }
 
-    .section { padding:80px 5%; max-width:1200px; margin:0 auto; text-align:center; }
-    .eyebrow { color:var(--accent); text-transform:uppercase; font-size:0.8rem; font-weight:700; letter-spacing:2px; margin-bottom:1rem; display:block; }
-    h1 { font-size:3rem; font-weight:800; color:var(--white); margin-bottom:1rem; letter-spacing:-1px; }
-    .subtitle { color:var(--text2); font-size:1.1rem; max-width:600px; margin:0 auto 4rem; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 980px;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      color: var(--text2);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+    }
 
     /* Copiando estilos de la tabla de precios original */
-    .planes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .plan-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 3rem 2rem; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; position: relative; display: flex; flex-direction: column; }
-    .plan-card:hover { transform: translateY(-10px); border-color: var(--accent); }
-    .plan-popular { border-color: var(--accent); background: linear-gradient(180deg, var(--bg2) 0%, rgba(45, 91, 227, 0.05) 100%); }
-    .plan-tag { position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 0.4rem 1rem; border-radius: 980px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-    .plan-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--white); }
-    .plan-price { font-size: 3.5rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; }
-    .plan-price span { font-size: 1rem; color: var(--text2); font-weight: 400; }
-    .plan-features { list-style: none; margin: 2rem 0; text-align: left; flex-grow: 1; }
-    .plan-features li { margin-bottom: 1rem; color: var(--text2); display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
-    .plan-features li::before { content: "✓"; color: var(--accent); font-weight: bold; }
-    .plan-btn { display: block; padding: 1rem; border-radius: 12px; font-weight: 700; text-decoration: none; transition: all 0.2s ease; }
-    .plan-btn-line { border: 1px solid var(--border); color: var(--white); }
-    .plan-btn-fill { background: var(--accent); color: white; }
-    .plan-btn:hover { opacity: 0.9; }
+    .planes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
 
-    footer { padding:4rem 5%; border-top:1px solid var(--border); text-align:center; color:var(--text3); font-size:0.8rem; margin-top:4rem; }
-    @media (max-width: 768px) { h1 { font-size: 2.2rem; } }
+    .plan-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+    }
+
+    .plan-popular {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, var(--bg2) 0%, rgba(45, 91, 227, 0.05) 100%);
+    }
+
+    .plan-tag {
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 980px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .plan-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .plan-price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-price span {
+      font-size: 1rem;
+      color: var(--text2);
+      font-weight: 400;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin: 2rem 0;
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      margin-bottom: 1rem;
+      color: var(--text2);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .plan-btn {
+      display: block;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .plan-btn-line {
+      border: 1px solid var(--border);
+      color: var(--white);
+    }
+
+    .plan-btn-fill {
+      background: var(--accent);
+      color: white;
+    }
+
+    .plan-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      padding: 4rem 5%;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text3);
+      font-size: 0.8rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -62,7 +249,8 @@
     <ul class="nav-links">
       <li><a href="/">Inicio</a></li>
       <li><a href="/sobre-mi">Sobre mí</a></li>
-      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta">Sesión Diagnóstico (29€)</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank"
+          class="nav-cta">Sesión Diagnóstico (29€)</a></li>
     </ul>
   </nav>
 
@@ -82,7 +270,8 @@
           <li>Ruta de estudio personalizada</li>
           <li>Revisión de código</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Starter" target="_blank" class="plan-btn plan-btn-line">Reservar sesión</a>
+        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Starter" target="_blank"
+          class="plan-btn plan-btn-line">Reservar sesión</a>
       </div>
 
       <!-- PRO -->
@@ -97,7 +286,8 @@
           <li>Proyectos reales para Portfolio</li>
           <li>Acceso a Masterclasses</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Pro" target="_blank" class="plan-btn plan-btn-fill">Reservar sesión</a>
+        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Pro" target="_blank"
+          class="plan-btn plan-btn-fill">Reservar sesión</a>
       </div>
 
       <!-- ELITE -->
@@ -111,7 +301,8 @@
           <li>Networking exclusivo</li>
           <li>Garantía de empleo</li>
         </ul>
-        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Elite" target="_blank" class="plan-btn plan-btn-line">Reservar sesión</a>
+        <a href="https://calendly.com/92sanchez-raul?a1=Interes-Plan-Elite" target="_blank"
+          class="plan-btn plan-btn-line">Reservar sesión</a>
       </div>
     </div>
   </section>
@@ -121,4 +312,5 @@
   </footer>
 
 </body>
+
 </html>
