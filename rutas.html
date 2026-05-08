@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutas de Aprendizaje — Zero2Dev | IA, Backend y Fullstack</title>
+  <link rel="canonical" href="https://zero2dev.es/rutas" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000000; --bg2: #0A0A0A; --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7; --text2: #A1A1A6;
+      --accent: #2D5BE3; --white: #FFFFFF; --radius: 20px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; padding-top:80px; }
+    
+    nav { position:fixed; top:0; left:0; right:0; height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000; border-bottom:1px solid var(--border); }
+    .logo { font-weight:800; font-size:1.5rem; color:var(--white); text-decoration:none; }
+    .nav-links { display:flex; gap:2rem; align-items:center; list-style:none; }
+    .nav-links a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-cta { background:var(--accent); color:white !important; padding:0.6rem 1.2rem; border-radius:980px; font-weight:600; }
+
+    .section { padding:80px 5%; max-width:1100px; margin:0 auto; }
+    .header { text-align:center; margin-bottom:5rem; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; font-size:0.8rem; font-weight:700; letter-spacing:2px; margin-bottom:1rem; display:block; }
+    h1 { font-size:3.5rem; font-weight:800; color:var(--white); margin-bottom:1rem; letter-spacing:-1.5px; }
+    .subtitle { color:var(--text2); font-size:1.1rem; max-width:600px; margin:0 auto; }
+
+    .ruta-detail { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:4rem; margin-bottom:4rem; }
+    .ruta-header { display:flex; align-items:center; gap:2rem; margin-bottom:3rem; }
+    .ruta-icon { font-size:3rem; background:var(--bg3); width:80px; height:80px; display:flex; align-items:center; justify-content:center; border-radius:18px; border:1px solid var(--border); }
+    .ruta-info h2 { font-size:2rem; color:var(--white); margin-bottom:0.5rem; }
+    .ruta-info p { color:var(--accent); font-weight:600; font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; }
+
+    .modules { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; }
+    .module-card { background:var(--bg3); padding:2rem; border-radius:15px; border:1px solid var(--border); }
+    .module-num { color:var(--accent); font-weight:800; font-size:0.8rem; margin-bottom:1rem; display:block; }
+    .module-card h4 { color:var(--white); margin-bottom:1rem; font-size:1.1rem; }
+    .module-card ul { list-style:none; }
+    .module-card li { color:var(--text2); font-size:0.9rem; margin-bottom:0.5rem; padding-left:1.2rem; position:relative; }
+    .module-card li::before { content:"•"; color:var(--accent); position:absolute; left:0; font-weight:bold; }
+
+    .cta-footer { text-align:center; padding:4rem 0; border-top:1px solid var(--border); margin-top:4rem; }
+    .btn { background:var(--accent); color:white; padding:1.2rem 2.5rem; border-radius:980px; text-decoration:none; font-weight:700; font-size:1.1rem; display:inline-block; transition:all 0.3s; }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(45,91,227,0.3); }
+
+    footer { padding:4rem 5%; text-align:center; color:var(--text2); font-size:0.8rem; border-top:1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      h1 { font-size:2.5rem; }
+      .ruta-detail { padding:2rem; }
+      .ruta-header { flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/planes">Planes</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta">Sesión Diagnóstico (29€)</a></li>
+    </ul>
+  </nav>
+
+  <header class="section header">
+    <span class="eyebrow">Currículum Pro</span>
+    <h1>Rutas de Aprendizaje</h1>
+    <p class="subtitle">Especialízate en las tecnologías que están moviendo el mercado. Sin paja, solo código real y herramientas de IA.</p>
+  </header>
+
+  <main class="section">
+    <!-- IA DEVELOPER -->
+    <div class="ruta-detail">
+      <div class="ruta-header">
+        <div class="ruta-icon">🤖</div>
+        <div class="ruta-info">
+          <h2>IA Developer</h2>
+          <p>La especialidad del futuro hoy</p>
+        </div>
+      </div>
+      <div class="modules">
+        <div class="module-card">
+          <span class="module-num">MOD 01</span>
+          <h4>Fundamentos de LLMs</h4>
+          <ul>
+            <li>Modelos, Tokens y Contexto</li>
+            <li>Prompt Engineering avanzado</li>
+            <li>API de OpenAI y Anthropic</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 02</span>
+          <h4>Agentes y RAG</h4>
+          <ul>
+            <li>Bases de datos vectoriales</li>
+            <li>LangChain y LangGraph</li>
+            <li>Agentes con herramientas (Tools)</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 03</span>
+          <h4>Productividad Extrema</h4>
+          <ul>
+            <li>Dominio de Cursor y Claude</li>
+            <li>Automatización de flujos</li>
+            <li>Despliegue de apps con IA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACKEND NODE.JS -->
+    <div class="ruta-detail">
+      <div class="ruta-header">
+        <div class="ruta-icon">📦</div>
+        <div class="ruta-info">
+          <h2>Backend Node.js</h2>
+          <p>Arquitectura robusta y escalable</p>
+        </div>
+      </div>
+      <div class="modules">
+        <div class="module-card">
+          <span class="module-num">MOD 01</span>
+          <h4>Ecosistema Node.js</h4>
+          <ul>
+            <li>Runtime, Event Loop y V8</li>
+            <li>TypeScript profesional</li>
+            <li>Express vs Fastify</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 02</span>
+          <h4>Arquitectura y DBs</h4>
+          <ul>
+            <li>Arquitectura Hexagonal / Clean</li>
+            <li>PostgreSQL, Prisma y Redis</li>
+            <li>Diseño de APIs RESTful / GraphQL</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 03</span>
+          <h4>Infra y Devops</h4>
+          <ul>
+            <li>Docker y CI/CD</li>
+            <li>Serverless y Workers</li>
+            <li>Seguridad (JWT, OAuth2)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULLSTACK PRO -->
+    <div class="ruta-detail">
+      <div class="ruta-header">
+        <div class="ruta-icon">🚀</div>
+        <div class="ruta-info">
+          <h2>Fullstack Pro</h2>
+          <p>El desarrollador total</p>
+        </div>
+      </div>
+      <div class="modules">
+        <div class="module-card">
+          <span class="module-num">MOD 01</span>
+          <h4>Frontend Moderno</h4>
+          <ul>
+            <li>React 19 y Next.js 15</li>
+            <li>Server Components y Actions</li>
+            <li>Tailwind CSS y Framer Motion</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 02</span>
+          <h4>Integración Total</h4>
+          <ul>
+            <li>Autenticación (Clerk / Auth.js)</li>
+            <li>Stripe para pagos</li>
+            <li>Websockets y Real-time</li>
+          </ul>
+        </div>
+        <div class="module-card">
+          <span class="module-num">MOD 03</span>
+          <h4>Proyecto Final</h4>
+          <ul>
+            <li>Arquitectura IA Fullstack</li>
+            <li>Optimización de rendimiento</li>
+            <li>Estrategia de despliegue</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-footer">
+      <h2>¿No sabes por dónde empezar?</h2>
+      <p style="color:var(--text2); margin-bottom:2rem; margin-top:1rem;">Analizaremos tu nivel actual y elegiremos la mejor ruta para ti.</p>
+      <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn">Reservar Sesión Diagnóstico (29€)</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Zero2Dev — Acompañamiento técnico personalizado
+  </footer>
+
+</body>
+</html>
