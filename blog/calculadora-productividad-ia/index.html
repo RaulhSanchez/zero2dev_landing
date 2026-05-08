@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Productividad IA — ¿Cuánto dinero estás perdiendo? | Zero2Dev</title>
-  <meta name="description" content="Calcula cuánto tiempo y dinero podrías ahorrar aplicando IA en tu flujo de trabajo como programador. Herramienta gratuita de Zero2Dev.">
+  <meta name="description"
+    content="Calcula cuánto tiempo y dinero podrías ahorrar aplicando IA en tu flujo de trabajo como programador. Herramienta gratuita de Zero2Dev.">
   <link rel="canonical" href="https://zero2dev.es/blog/calculadora-productividad-ia" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -20,49 +22,232 @@
       --white: #FFFFFF;
       --radius: 20px;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; padding-top:100px; }
-    
-    nav { position:fixed; top:0; left:0; right:0; height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000; border-bottom:1px solid var(--border); }
-    .logo { font-weight:800; font-size:1.5rem; color:var(--white); text-decoration:none; }
-    
-    .container { max-width: 800px; margin: 0 auto; padding: 0 5%; }
-    .eyebrow { color:var(--accent); text-transform:uppercase; font-size:0.8rem; font-weight:700; letter-spacing:2px; margin-bottom:1rem; display:block; text-align:center;}
-    h1 { font-size:2.5rem; font-weight:800; color:var(--white); margin-bottom:1.5rem; text-align:center; letter-spacing:-1px; }
-    .intro { color:var(--text2); font-size:1.1rem; text-align:center; margin-bottom:3rem; }
 
-    .calc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 3rem; margin-bottom: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-    
-    .input-group { margin-bottom: 2rem; }
-    label { display: block; margin-bottom: 0.75rem; color: var(--text); font-weight: 500; font-size: 0.9rem; }
-    input[type="range"] { width: 100%; height: 6px; background: var(--bg3); border-radius: 5px; appearance: none; outline: none; margin-bottom: 0.5rem; }
-    input[type="range"]::-webkit-slider-thumb { appearance: none; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; cursor: pointer; border: 3px solid var(--bg2); transition: transform 0.2s; }
-    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
-    .value-display { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    .results { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); }
-    .result-item { background: var(--bg3); padding: 1.5rem; border-radius: 12px; text-align: center; }
-    .result-label { font-size: 0.75rem; text-transform: uppercase; color: var(--text2); letter-spacing: 1px; margin-bottom: 0.5rem; }
-    .result-value { font-size: 1.75rem; font-weight: 800; color: var(--white); }
-    .result-value span { font-size: 0.9rem; color: var(--accent); margin-left: 4px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding-top: 100px;
+    }
 
-    .roi-box { background: linear-gradient(135deg, rgba(45, 91, 227, 0.1) 0%, rgba(45, 91, 227, 0.02) 100%); border: 1px solid var(--accent); border-radius: 12px; padding: 2rem; margin-top: 2rem; text-align: center; }
-    .roi-box h3 { color: var(--white); margin-bottom: 0.5rem; }
-    .roi-box p { color: var(--text2); font-size: 0.9rem; }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
 
-    .cta-section { text-align: center; padding: 4rem 0; }
-    .btn { background: var(--accent); color: white; padding: 1.2rem 2.5rem; border-radius: 980px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: all 0.3s; box-shadow: 0 10px 20px rgba(45, 91, 227, 0.3); }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(45, 91, 227, 0.5); }
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+    }
 
-    footer { padding:4rem 5%; border-top:1px solid var(--border); text-align:center; color:var(--text2); font-size:0.8rem; margin-top:4rem; }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      display: block;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: -1px;
+    }
+
+    .intro {
+      color: var(--text2);
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .calc-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .input-group {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: var(--bg3);
+      border-radius: 5px;
+      appearance: none;
+      outline: none;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      border: 3px solid var(--bg2);
+      transition: transform 0.2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .value-display {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-item {
+      background: var(--bg3);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .result-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text2);
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .result-value span {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-left: 4px;
+    }
+
+    .roi-box {
+      background: linear-gradient(135deg, rgba(45, 91, 227, 0.1) 0%, rgba(45, 91, 227, 0.02) 100%);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .roi-box h3 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .roi-box p {
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 1.2rem 2.5rem;
+      border-radius: 980px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: all 0.3s;
+      box-shadow: 0 10px 20px rgba(45, 91, 227, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(45, 91, 227, 0.5);
+    }
+
+    footer {
+      padding: 4rem 5%;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.8rem;
+      margin-top: 4rem;
+    }
 
     @media (max-width: 600px) {
-      .results { grid-template-columns: 1fr; }
-      h1 { font-size: 2rem; }
-      .calc-card { padding: 1.5rem; }
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .calc-card {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -73,7 +258,8 @@
     <span class="eyebrow">Herramienta Gratuita</span>
     <h1>Calculadora de Productividad IA</h1>
     <p class="intro">
-      La inteligencia artificial no va a sustituir a los programadores, pero los programadores que usan IA sí sustituirán a los que no. Descubre cuánto tiempo y dinero estás dejando sobre la mesa.
+      La inteligencia artificial no va a sustituir a los programadores, pero los programadores que usan IA sí
+      sustituirán a los que no. Descubre cuánto tiempo y dinero estás dejando sobre la mesa.
     </p>
 
     <div class="calc-card">
@@ -91,7 +277,8 @@
 
       <div class="input-group">
         <label>Nivel actual de uso de IA (Cursor, Claude, Copilot...)</label>
-        <select id="ai-level" onchange="calculate()" style="width:100%; padding:1rem; border-radius:12px; background:var(--bg3); border:1px solid var(--border); color:white; outline:none;">
+        <select id="ai-level" onchange="calculate()"
+          style="width:100%; padding:1rem; border-radius:12px; background:var(--bg3); border:1px solid var(--border); color:white; outline:none;">
           <option value="0">No uso IA (o solo para chats básicos)</option>
           <option value="1">Uso IA ocasionalmente (20% ahorro)</option>
           <option value="2">Uso IA con fluidez (40% ahorro)</option>
@@ -117,20 +304,24 @@
 
     <div class="cta-section">
       <h2>Deja de quemar horas y dinero</h2>
-      <p style="margin-bottom:2rem; color:var(--text2);">Mi acompañamiento 1:1 te enseña el flujo de trabajo real para que recuperes este tiempo desde la primera semana.</p>
-      <a href="https://zero2dev.es" class="btn">Ver Planes de Entrenamiento</a>
+      <p style="margin-bottom:2rem; color:var(--text2);">Mi acompañamiento 1:1 te enseña el flujo de trabajo real para
+        que recuperes este tiempo desde la primera semana.</p>
+      <a href="https://zero2dev.es" class="btn">Ver Planes</a>
     </div>
 
     <article style="border-top: 1px solid var(--border); padding-top: 4rem; color: var(--text2);">
       <h2 style="color:white; margin-bottom:1.5rem;">¿Por qué este cálculo es real?</h2>
       <p style="margin-bottom:1.5rem;">
-        Un programador medio dedica el 60% de su tiempo a tareas "no creativas": debuguear errores de sintaxis, escribir tests repetitivos, redactar documentación o buscar en StackOverflow. 
+        Un programador medio dedica el 60% de su tiempo a tareas "no creativas": debuguear errores de sintaxis, escribir
+        tests repetitivos, redactar documentación o buscar en StackOverflow.
       </p>
       <p style="margin-bottom:1.5rem;">
-        Con herramientas como Cursor o Claude 3.5 Sonnet bien configuradas, esas tareas se reducen drásticamente. Lo que antes tardabas 4 horas en construir, hoy se puede hacer en 45 minutos si sabes cómo guiar a la IA.
+        Con herramientas como Cursor o Claude 3.5 Sonnet bien configuradas, esas tareas se reducen drásticamente. Lo que
+        antes tardabas 4 horas en construir, hoy se puede hacer en 45 minutos si sabes cómo guiar a la IA.
       </p>
       <p>
-        No se trata de "generar código", se trata de <strong>diseñar soluciones</strong> y dejar que la IA se encargue de la carpintería pesada.
+        No se trata de "generar código", se trata de <strong>diseñar soluciones</strong> y dejar que la IA se encargue
+        de la carpintería pesada.
       </p>
     </article>
   </div>
@@ -144,7 +335,7 @@
       const hours = document.getElementById('hours').value;
       const salary = document.getElementById('salary').value;
       const aiLevel = document.getElementById('ai-level').value;
-      
+
       document.getElementById('hours-val').innerText = hours;
       document.getElementById('salary-val').innerText = salary;
 
@@ -177,4 +368,5 @@
   </script>
 
 </body>
+
 </html>

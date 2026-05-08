@@ -1193,7 +1193,8 @@
       <li><a href="/planes">Planes</a></li>
       <li><a href="/sobre-mi">Sobre mí</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta" style="background:var(--accent); border:none;">Sesión Diagnóstico (29€)</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta"
+          style="background:var(--accent); border:none;">Sesión Diagnóstico (29€)</a></li>
     </ul>
   </nav>
 
@@ -1202,14 +1203,16 @@
     <p class="hero-eyebrow">Acelera tu carrera Tech con IA</p>
     <h1>Toma el control de tu futuro.<br /><em>Acompañamiento 1:1 Personalizado</em></h1>
     <p class="hero-sub">
-      Deja de saltar de tutorial en tutorial. Construye un plan de estudio real 
+      Deja de saltar de tutorial en tutorial. Construye un plan de estudio real
       enfocado en lo que las empresas piden hoy. Resultados reales, sin relleno.
     </p>
     <div class="hero-actions">
-      <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary" style="padding:1.2rem 2rem; font-size:1.1rem; box-shadow: 0 10px 30px rgba(45, 91, 227, 0.4);">
+      <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary"
+        style="padding:1.2rem 2rem; font-size:1.1rem; box-shadow: 0 10px 30px rgba(45, 91, 227, 0.4);">
         Sesión Diagnóstico (29€)
       </a>
-      <a href="https://calendly.com/92sanchez-raul?a1=Discovery-Gratis" target="_blank" class="btn btn-ghost" style="border:1px solid var(--border);">
+      <a href="https://calendly.com/92sanchez-raul?a1=Discovery-Gratis" target="_blank" class="btn btn-ghost"
+        style="border:1px solid var(--border);">
         Sesión Gratuita
       </a>
     </div>
@@ -1507,7 +1510,7 @@
         Diagnóstico<br><span style="color:#2D5BE3;">29€ · 30 minutos</span></h2>
       <p style="color:#8E8E93;font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem;">Analizamos tu situación actual,
         tus objetivos y te entrego un <strong style="color:#fff;">plan de aprendizaje personalizado en PDF</strong>. Sin
-        compromiso de continuar. Si después decides empezar con el entrenamiento, los 29€ se descuentan del primer mes.</p>
+        compromiso de continuar. Si después decides empezar con el programa, los 29€ se descuentan del primer mes.</p>
       <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-bottom:1.75rem;">
         <span
           style="background:#0d1f0d;border:1px solid #2a6b2a;color:#4caf50;font-size:0.8rem;padding:0.4rem 0.9rem;border-radius:30px;">✓
@@ -1543,19 +1546,23 @@
           <span class="recurso-icon">🗺️</span>
           <h4>Manual IA 2026</h4>
           <p id="manual-status">Introduce tu email y te enviaremos el acceso al manual de forma inmediata.</p>
-          
+
           <form id="landing-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
-            <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit; outline:none; transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
-            <button type="submit" class="btn btn-primary" id="landing-btn" style="width:100%; justify-content:center; padding:1rem; border:none; cursor:pointer;">Enviar Manual</button>
+            <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required
+              style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit; outline:none; transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+            <button type="submit" class="btn btn-primary" id="landing-btn"
+              style="width:100%; justify-content:center; padding:1rem; border:none; cursor:pointer;">Enviar
+              Manual</button>
           </form>
 
           <script>
-            document.getElementById('landing-form').addEventListener('submit', function(e) {
+            document.getElementById('landing-form').addEventListener('submit', function (e) {
               e.preventDefault();
               const btn = document.getElementById('landing-btn');
               const status = document.getElementById('manual-status');
               const email = document.getElementById('landing-email').value;
-              
+
               btn.innerText = 'Enviando...';
               btn.disabled = true;
 
@@ -1571,7 +1578,7 @@
               }).finally(() => {
                 status.innerHTML = '<span style="color:#4caf50">¡Éxito! Tu descarga está comenzando...</span>';
                 btn.innerText = '¡Enviado!';
-                
+
                 // Iniciar descarga
                 const link = document.createElement('a');
                 link.href = 'z2d-manual-v1-secure.pdf';
@@ -1621,7 +1628,8 @@
               <line x1="1" y1="5" x2="9" y2="5" />
             </svg></span>
         </button>
-        <div class="faq-a">No hay permanencia. Puedes cancelar tu suscripción en cualquier momento. Mi objetivo es que te quedes porque ves resultados, no porque estés atado por un contrato.</div>
+        <div class="faq-a">No hay permanencia. Puedes cancelar tu suscripción en cualquier momento. Mi objetivo es que
+          te quedes porque ves resultados, no porque estés atado por un contrato.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -1667,9 +1675,11 @@
 
   <!-- SEO TEXT — indexable por Google -->
   <section class="section" style="max-width:780px; margin:0 auto; padding:4rem 1.5rem;">
-    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1.25rem; color:var(--text1);">Acompañamiento técnico</h2>
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:1.25rem; color:var(--text1);">Acompañamiento técnico
+    </h2>
     <p style="font-size:0.95rem; line-height:1.6; color:var(--text2); margin-bottom:1.5rem;">
-      Zero2Dev es un programa de acompañamiento personalizado para personas que quieren aprender a programar con IA, Node.js
+      Zero2Dev es un programa de acompañamiento personalizado para personas que quieren aprender a programar con IA,
+      Node.js
       y Fullstack desde cero o mejorar su nivel técnico. A diferencia de los bootcamps o los cursos grabados, cada
       sesión es contigo y adaptada exactamente a tu situación, tus objetivos y tu ritmo.
     </p>
@@ -1696,14 +1706,16 @@
   <section class="cta-final">
     <p class="eyebrow">Acelera tu cambio</p>
     <h2>Tu carrera no puede esperar.</h2>
-    <p>Reserva tu diagnóstico hoy y diseña tu roadmap personalizado para 2026.<br />Damos prioridad a las sesiones de diagnóstico pagadas.
+    <p>Reserva tu diagnóstico hoy y diseña tu roadmap personalizado para 2026.<br />Damos prioridad a las sesiones de
+      diagnóstico pagadas.
     </p>
     <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn btn-primary"
       style="font-size:1.1rem; padding:1.2rem 2.5rem; box-shadow: 0 10px 30px rgba(45, 91, 227, 0.4);">
       Reservar Diagnóstico (29€) 🚀
     </a>
     <br />
-    <a href="https://calendly.com/92sanchez-raul?a1=Discovery-Gratis" target="_blank" style="color:var(--text2); font-size:0.9rem; text-decoration:underline; margin-top:1.5rem; display:inline-block;">
+    <a href="https://calendly.com/92sanchez-raul?a1=Discovery-Gratis" target="_blank"
+      style="color:var(--text2); font-size:0.9rem; text-decoration:underline; margin-top:1.5rem; display:inline-block;">
       O prefiere una sesión gratuita de 15 min
     </a>
     <br />
