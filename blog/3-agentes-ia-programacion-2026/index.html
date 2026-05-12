@@ -1,70 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3 Agentes de IA imprescindibles para programadores en 2026 | Zero2Dev</title>
-  <meta name="description" content="Descubre los 3 agentes de IA que están cambiando las reglas del juego en el desarrollo de software. No solo escriben código, resuelven problemas complejos.">
+  <meta name="description"
+    content="Descubre los 3 agentes de IA que están cambiando las reglas del juego en el desarrollo de software. No solo escriben código, resuelven problemas complejos.">
   <link rel="canonical" href="https://zero2dev.es/blog/3-agentes-ia-programacion-2026" />
-  
+
   <!-- Open Graph / Redes Sociales -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="3 Agentes de IA imprescindibles para programadores en 2026" />
-  <meta property="og:description" content="Domina la orquestación de agentes autónomos y multiplica tu productividad técnica." />
+  <meta property="og:description"
+    content="Domina la orquestación de agentes autónomos y multiplica tu productividad técnica." />
   <meta property="og:url" content="https://zero2dev.es/blog/3-agentes-ia-programacion-2026" />
   <meta property="og:image" content="https://zero2dev.es/blog/3-agentes-ia-programacion-2026/og-agents.png" />
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="3 Agentes de IA que todo programador debería dominar" />
-  <meta name="twitter:description" content="Descubre cómo los agentes autónomos están cambiando el desarrollo de software." />
+  <meta name="twitter:description"
+    content="Descubre cómo los agentes autónomos están cambiando el desarrollo de software." />
   <meta name="twitter:image" content="https://zero2dev.es/blog/3-agentes-ia-programacion-2026/og-agents.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #000000; --bg2: #0A0A0A; --bg3: #111111;
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
       --border: rgba(255, 255, 255, 0.08);
-      --text: #F5F5F7; --text2: #A1A1A6;
-      --accent: #2D5BE3; --white: #FFFFFF; --radius: 20px;
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --accent: #2D5BE3;
+      --white: #FFFFFF;
+      --radius: 20px;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; padding-top:80px; }
-    
-    nav { position:fixed; top:0; left:0; right:0; height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 5%; background:rgba(0,0,0,0.8); backdrop-filter:blur(10px); z-index:1000; border-bottom:1px solid var(--border); }
-    .logo { font-weight:800; font-size:1.5rem; color:var(--white); text-decoration:none; }
-    .logo span { color:var(--accent); }
-    .nav-links { display:flex; gap:2rem; align-items:center; list-style:none; }
-    .nav-links a { color:var(--text2); text-decoration:none; font-size:0.9rem; transition:color 0.2s; }
-    .nav-links a:hover { color:var(--white); }
-    .nav-cta { background:var(--accent); color:white !important; padding:0.6rem 1.2rem; border-radius:980px; font-weight:600; text-decoration:none; }
 
-    .article-container { max-width: 800px; margin: 4rem auto; padding: 0 1.5rem; }
-    .post-header { text-align: center; margin-bottom: 4rem; }
-    .eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 1rem; display: block; }
-    h1 { font-size: 3rem; font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -2px; margin-bottom: 1.5rem; }
-    .meta { color: var(--text2); font-size: 0.9rem; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    .content { font-size: 1.1rem; color: var(--text2); }
-    .content h2 { color: var(--white); font-size: 1.75rem; margin: 3rem 0 1.5rem; }
-    .content p { margin-bottom: 1.5rem; }
-    .content strong { color: var(--white); }
-    
-    .agent-card { background: var(--bg2); border: 1px solid var(--border); padding: 2rem; border-radius: var(--radius); margin-bottom: 2rem; }
-    .agent-card h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.4rem; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
 
-    .cta-box { background: var(--bg2); border: 1px solid var(--accent); padding: 3rem; border-radius: var(--radius); text-align: center; margin-top: 5rem; }
-    .btn { background: var(--accent); color: white; padding: 1rem 2rem; border-radius: 980px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 1.5rem; transition: transform 0.2s; }
-    .btn:hover { transform: scale(1.05); }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
 
-    footer { padding: 4rem 5%; text-align: center; color: var(--text2); font-size: 0.8rem; border-top: 1px solid var(--border); }
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 980px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .post-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    .content {
+      font-size: 1.1rem;
+      color: var(--text2);
+    }
+
+    .content h2 {
+      color: var(--white);
+      font-size: 1.75rem;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .content strong {
+      color: var(--white);
+    }
+
+    .agent-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: var(--radius);
+      margin-bottom: 2rem;
+    }
+
+    .agent-card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .cta-box {
+      background: var(--bg2);
+      border: 1px solid var(--accent);
+      padding: 3rem;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 980px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 1.5rem;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 4rem 5%;
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
+      h1 {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -73,7 +224,8 @@
       <li><a href="/rutas">Rutas</a></li>
       <li><a href="/planes">Planes</a></li>
       <li><a href="/blog">Blog</a></li>
-      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta">Sesión Diagnóstico (29€)</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank"
+          class="nav-cta">Sesión Diagnóstico (29€)</a></li>
     </ul>
   </nav>
 
@@ -85,32 +237,44 @@
     </header>
 
     <div class="content">
-      <p>Ya no basta con usar la IA para que te complete una línea de código. En 2026, la diferencia entre un desarrollador estancado y uno de élite reside en la capacidad de orquestar **agentes autónomos**.</p>
-      
-      <p>Un agente no es solo un chat; es un sistema que tiene herramientas, puede leer archivos, ejecutar tests y corregir sus propios errores. Aquí tienes los 3 que yo uso a diario en mis mentorías:</p>
+      <p>Ya no basta con usar la IA para que te complete una línea de código. En 2026, la diferencia entre un
+        desarrollador estancado y uno de élite reside en la capacidad de orquestar **agentes autónomos**.</p>
+
+      <p>Un agente no es solo un chat; es un sistema que tiene herramientas, puede leer archivos, ejecutar tests y
+        corregir sus propios errores. Aquí tienes los 3 que yo uso a diario en mis sesiones:</p>
 
       <div class="agent-card">
         <h3>1. El Agente de Refactorización Continua</h3>
-        <p>No esperes al final del sprint. Este agente analiza tus Pull Requests en tiempo real, no solo buscando errores, sino proponiendo mejoras de arquitectura. En Zero2Dev enseñamos a configurar agentes que entienden el contexto global de tu aplicación, no solo el archivo abierto.</p>
+        <p>No esperes al final del sprint. Este agente analiza tus Pull Requests en tiempo real, no solo buscando
+          errores, sino proponiendo mejoras de arquitectura. En Zero2Dev enseñamos a configurar agentes que entienden el
+          contexto global de tu aplicación, no solo el archivo abierto.</p>
       </div>
 
       <div class="agent-card">
         <h3>2. El Arquitecto de Tests Autónomo</h3>
-        <p>Escribir tests es vital, pero aburrido. Los agentes modernos pueden leer tus requisitos técnicos y generar una suite de tests (Unit, Integration, E2E) que cubren el 90% de los casos de borde. Tu trabajo pasa a ser auditar esos tests, no picarlos a mano.</p>
+        <p>Escribir tests es vital, pero aburrido. Los agentes modernos pueden leer tus requisitos técnicos y generar
+          una suite de tests (Unit, Integration, E2E) que cubren el 90% de los casos de borde. Tu trabajo pasa a ser
+          auditar esos tests, no picarlos a mano.</p>
       </div>
 
       <div class="agent-card">
         <h3>3. El Agente de Documentación Viva</h3>
-        <p>¿Cansado de que el README esté desactualizado? Este agente sincroniza la documentación técnica con el código real cada vez que haces un commit. Traduce cambios técnicos a lenguaje de negocio para que tus PMs entiendan el impacto real del desarrollo.</p>
+        <p>¿Cansado de que el README esté desactualizado? Este agente sincroniza la documentación técnica con el código
+          real cada vez que haces un commit. Traduce cambios técnicos a lenguaje de negocio para que tus PMs entiendan
+          el impacto real del desarrollo.</p>
       </div>
 
       <h2>Conclusión: El cambio de paradigma</h2>
-      <p>Dominar estos agentes es lo que te permite trabajar a una velocidad que parece "magia" para los que siguen usando VS Code tradicional. Si quieres dejar de ser un operario de código y empezar a ser un director de orquesta técnico, el momento es ahora.</p>
+      <p>Dominar estos agentes es lo que te permite trabajar a una velocidad que parece "magia" para los que siguen
+        usando VS Code tradicional. Si quieres dejar de ser un operario de código y empezar a ser un director de
+        orquesta técnico, el momento es ahora.</p>
 
       <div class="cta-box">
         <h3>¿Quieres ver estos agentes en acción?</h3>
-        <p>En mi acompañamiento 1:1 te enseño a configurar tu propio "ejército de agentes" para que multipliques tu impacto profesional.</p>
-        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn">Reservar Sesión Diagnóstico (29€)</a>
+        <p>En mi acompañamiento 1:1 te enseño a configurar tu propio "ejército de agentes" para que multipliques tu
+          impacto profesional.</p>
+        <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="btn">Reservar
+          Sesión Diagnóstico (29€)</a>
       </div>
     </div>
   </article>
@@ -120,4 +284,5 @@
   </footer>
 
 </body>
+
 </html>
