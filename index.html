@@ -1545,6 +1545,8 @@
           <p id="manual-status">Introduce tu email y descarga el roadmap exacto para pasar de 0 a producto real en 30 días.</p>
 
           <form id="landing-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
+            <!-- Honeypot para evitar bots -->
+            <input type="text" name="_gotcha" style="display:none" />
             <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required
               style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit; outline:none; transition:border-color 0.2s;"
               onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
@@ -1558,15 +1560,34 @@
               const btn = document.getElementById('landing-btn');
               const status = document.getElementById('manual-status');
               const email = document.getElementById('landing-email').value;
+              const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+              // 1. Bloqueo de Bots por Honeypot
+              if (gotcha !== "") return;
+
+              // 2. Bloqueo de Dominios Basura
+              const forbiddenDomains = [
+                'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+                'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+                'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+              ];
+              const emailDomain = email.split('@')[1]?.toLowerCase();
+              
+              if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+                // Fingimos éxito para que el bot no insista, pero no enviamos
+                status.innerHTML = '<span style="color:#4caf50">¡Éxito! Tu descarga está comenzando...</span>';
+                setTimeout(() => {
+                  window.location.href = 'zero2dev_roadmap_30dias.pdf';
+                }, 1000);
+                return;
+              }
 
               btn.innerText = 'Enviando...';
               btn.disabled = true;
 
-              // Crear datos de formulario estándar
               const formData = new FormData();
               formData.append('email', email);
 
-              // Mandar a Formspree (ID Real del usuario)
               fetch('https://formspree.io/f/xykojvky', {
                 method: 'POST',
                 body: formData,
@@ -1574,8 +1595,7 @@
               }).finally(() => {
                 status.innerHTML = '<span style="color:#4caf50">¡Éxito! Tu descarga está comenzando...</span>';
                 btn.innerText = '¡Enviado!';
-
-                // Iniciar descarga
+                
                 const link = document.createElement('a');
                 link.href = 'zero2dev_roadmap_30dias.pdf';
                 link.download = 'zero2dev_roadmap_30dias.pdf';

@@ -197,16 +197,66 @@
 
     <div class="cta-footer" style="background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:4rem; margin-top:4rem;">
       <span class="eyebrow">Recurso Gratuito</span>
-      <h2 style="font-size:2.5rem; margin-bottom:1rem;">¿Quieres el manual completo?</h2>
-      <p style="color:var(--text2); margin-bottom:2rem; max-width:600px; margin-left:auto; margin-right:auto;">
-        He condensado los pilares de la metodología Zero2Dev en un manual PDF. Aprende cómo configurar tu entorno de IA y cómo escalar tu carrera.
+      <h2 style="font-size:2.5rem; margin-bottom:1rem;">¿Quieres el Roadmap completo?</h2>
+      <p id="cta-status" style="color:var(--text2); margin-bottom:2rem; max-width:600px; margin-left:auto; margin-right:auto;">
+        He condensado los pilares de la metodología Zero2Dev en un Roadmap de 30 días. Aprende cómo configurar tu entorno de IA y cómo escalar tu carrera.
       </p>
       
-      <form action="https://formspree.io/f/xykojvky" method="POST" style="max-width:400px; margin:0 auto; display:flex; gap:0.5rem;">
-        <input type="email" name="email" placeholder="Tu mejor email..." required 
-          style="flex:1; background:var(--bg3); border:1px solid var(--border); padding:1rem; border-radius:980px; color:white; font-family:inherit;">
-        <button type="submit" class="btn" style="padding:1rem 2rem; font-size:0.9rem;">Descargar Manual</button>
+      <form id="cta-form" style="max-width:400px; margin:0 auto; display:flex; gap:0.5rem; flex-wrap:wrap;">
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="email" name="email" id="cta-email" placeholder="Tu mejor email..." required 
+          style="flex:1; background:var(--bg3); border:1px solid var(--border); padding:1rem; border-radius:980px; color:white; font-family:inherit; min-width:200px;">
+        <button type="submit" class="btn" id="cta-btn" style="padding:1rem 2rem; font-size:0.9rem;">Descargar Roadmap</button>
       </form>
+
+      <script>
+        document.getElementById('cta-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          const btn = document.getElementById('cta-btn');
+          const status = document.getElementById('cta-status');
+          const email = document.getElementById('cta-email').value;
+          const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+          if (gotcha !== "") return;
+
+          const forbiddenDomains = [
+            'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+            'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+            'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+          ];
+          const emailDomain = email.split('@')[1]?.toLowerCase();
+          
+          if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+            status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+            setTimeout(() => {
+              window.location.href = 'zero2dev_roadmap_30dias.pdf';
+            }, 1000);
+            return;
+          }
+
+          btn.innerText = 'Enviando...';
+          btn.disabled = true;
+
+          const formData = new FormData();
+          formData.append('email', email);
+
+          fetch('https://formspree.io/f/xykojvky', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).finally(() => {
+            status.innerHTML = '<span style="color:#4caf50">¡Éxito! Tu descarga está comenzando...</span>';
+            btn.innerText = '¡Enviado!';
+            
+            const link = document.createElement('a');
+            link.href = 'zero2dev_roadmap_30dias.pdf';
+            link.download = 'zero2dev_roadmap_30dias.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        });
+      </script>
       
       <p style="color:var(--text3); font-size:0.8rem; margin-top:1.5rem;">
         <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" style="color:var(--accent); text-decoration:none; font-weight:600;">O reserva tu sesión diagnóstico directamente →</a>

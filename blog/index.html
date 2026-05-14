@@ -88,6 +88,8 @@
       <p id="blog-status" style="color:var(--text2); max-width:500px; margin:0 auto 2rem;">Descarga el roadmap de 30 días para dominar la IA. Te lo enviamos directamente a tu bandeja de entrada.</p>
       
       <form id="blog-form" style="max-width:400px; margin:0 auto; display:flex; gap:0.5rem; flex-wrap:wrap;">
+        <!-- Honeypot -->
+        <input type="text" name="_gotcha" style="display:none" />
         <input type="email" name="email" id="blog-email" placeholder="Tu mejor email" required style="flex:1; min-width:200px; padding:0.8rem 1rem; border-radius:980px; border:1px solid var(--border); background:rgba(0,0,0,0.3); color:white;">
         <button type="submit" class="nav-cta" id="blog-btn" style="border:none; cursor:pointer; padding:0.8rem 1.5rem;">Descargar Roadmap</button>
       </form>
@@ -98,6 +100,24 @@
           const btn = document.getElementById('blog-btn');
           const status = document.getElementById('blog-status');
           const email = document.getElementById('blog-email').value;
+          const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+          if (gotcha !== "") return;
+
+          const forbiddenDomains = [
+            'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+            'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+            'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+          ];
+          const emailDomain = email.split('@')[1]?.toLowerCase();
+          
+          if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+            status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+            setTimeout(() => {
+              window.location.href = '../zero2dev_roadmap_30dias.pdf';
+            }, 1000);
+            return;
+          }
           
           btn.innerText = '...';
           btn.disabled = true;

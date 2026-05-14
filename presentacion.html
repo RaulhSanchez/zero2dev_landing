@@ -274,11 +274,13 @@
           dominar la programación con IA. Introduce tu email para desbloquear el acceso.</p>
 
         <form id="overlay-form" style="width:100%; max-width:350px; display:flex; flex-direction:column; gap:1rem;">
+          <!-- Honeypot -->
+          <input type="text" name="_gotcha" style="display:none" />
           <input type="email" id="overlay-email" placeholder="Tu mejor email" required
             style="width:100%; padding:1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.05); color:white;">
           <button type="submit" class="btn" id="overlay-btn" style="width:100%;">Ver Masterclass Ahora</button>
         </form>
-        <p style="font-size:0.75rem; color:var(--text3); margin-top:1rem;">Recibirás también el Manual de IA en tu
+        <p style="font-size:0.75rem; color:var(--text3); margin-top:1rem;">Recibirás también el Roadmap de 30 días en tu
           bandeja de entrada.</p>
       </div>
 
@@ -345,24 +347,44 @@
       const overlay = document.getElementById('video-overlay');
       const player = document.getElementById('video-player');
       const afterCta = document.getElementById('after-video-cta');
+      const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+      // 1. Bloqueo de Bots
+      if (gotcha !== "") return;
+
+      // 2. Validación estricta de dominios basura
+      const forbiddenDomains = [
+        'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+        'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+        'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+      ];
+      
+      const emailDomain = email.split('@')[1]?.toLowerCase();
+      
+      // Si el dominio está en la lista negra o es sospechoso
+      if (forbiddenDomains.includes(emailDomain) || emailDomain.length < 4) {
+        // Fingimos éxito para el bot y desbloqueamos el vídeo para no frustrar a nadie
+        overlay.style.display = 'none';
+        player.style.display = 'block';
+        afterCta.style.display = 'block';
+        return;
+      }
 
       btn.innerText = 'Verificando...';
       btn.disabled = true;
 
       fetch('https://formspree.io/f/xykojvky', {
         method: 'POST',
-        body: JSON.stringify({ email: email, source: 'Masterclass-Direct-Gate' }),
+        body: JSON.stringify({ email: email, source: 'Masterclass-Gate-Strict' }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).then(() => {
         overlay.style.display = 'none';
         player.style.display = 'block';
         afterCta.style.display = 'block';
 
-        // AUTO-PLAY DE YOUTUBE
         const iframe = document.getElementById('yt-player');
         iframe.src += "&autoplay=1";
 
-        // Iniciar descarga del PDF
         const link = document.createElement('a');
         link.href = 'zero2dev_roadmap_30dias.pdf';
         link.download = 'zero2dev_roadmap_30dias.pdf';
@@ -370,8 +392,8 @@
         link.click();
         document.body.removeChild(link);
       }).catch(() => {
-        btn.innerText = 'Reintentar';
-        btn.disabled = false;
+        overlay.style.display = 'none';
+        player.style.display = 'block';
       });
     }
 

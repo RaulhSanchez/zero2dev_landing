@@ -90,13 +90,15 @@
         <a href="/blog/calculadora-productividad-ia" class="btn">Probar Calculadora Gratuita</a>
         
         <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-          <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres el manual completo?</h3>
-          <p style="font-size:0.9rem; margin-bottom:1.5rem;">He condensado los pilares de la metodología Zero2Dev en un manual PDF. Descárgalo gratis.</p>
+          <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres el Roadmap completo?</h3>
+          <p style="font-size:0.9rem; margin-bottom:1.5rem;">He condensado los pilares de la metodología Zero2Dev en un Roadmap de 30 días. Descárgalo gratis.</p>
           
-          <form id="lead-form" style="display:flex; gap:0.5rem; max-width:400px; margin:0 auto;">
+          <form id="lead-form" style="display:flex; gap:0.5rem; max-width:400px; margin:0 auto; flex-wrap:wrap;">
+            <!-- Honeypot -->
+            <input type="text" name="_gotcha" style="display:none" />
             <input type="email" id="lead-email" placeholder="Tu mejor email..." required 
-              style="flex:1; background:var(--bg3); border:1px solid var(--border); padding:0.8rem; border-radius:980px; color:white; font-family:inherit;">
-            <button type="submit" class="btn" style="margin:0; padding:0.8rem 1.5rem; font-size:0.9rem;">Descargar</button>
+              style="flex:1; background:var(--bg3); border:1px solid var(--border); padding:0.8rem; border-radius:980px; color:white; font-family:inherit; min-width:200px;">
+            <button type="submit" class="btn" style="margin:0; padding:0.8rem 1.5rem; font-size:0.9rem;">Descargar Roadmap</button>
           </form>
           <div id="lead-status" style="margin-top:1rem; font-size:0.8rem; color:var(--text2);"></div>
         </div>
@@ -112,6 +114,24 @@
           const email = document.getElementById('lead-email').value;
           const status = document.getElementById('lead-status');
           const btn = this.querySelector('button');
+          const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+          if (gotcha !== "") return;
+
+          const forbiddenDomains = [
+            'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+            'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+            'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+          ];
+          const emailDomain = email.split('@')[1]?.toLowerCase();
+          
+          if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+            status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+            setTimeout(() => {
+              window.location.href = '/zero2dev_roadmap_30dias.pdf';
+            }, 1000);
+            return;
+          }
           
           btn.innerText = 'Enviando...';
           btn.disabled = true;

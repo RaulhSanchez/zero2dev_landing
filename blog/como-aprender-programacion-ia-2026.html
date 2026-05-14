@@ -131,12 +131,14 @@
     </div>
 
     <div class="cta-box">
-      <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres pasar de cero a profesional?</h3>
-      <p id="article-status" style="color:var(--text2); font-size:0.95rem;">Introduce tu email y te enviaremos el manual completo para dominar el desarrollo con IA.</p>
+      <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres el Roadmap de 30 días?</h3>
+      <p id="article-status" style="color:var(--text2); font-size:0.95rem;">Introduce tu email y te enviaremos el roadmap completo para dominar el desarrollo con IA en tiempo récord.</p>
       
       <form id="article-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem; max-width:400px; margin-left:auto; margin-right:auto;">
+        <!-- Honeypot -->
+        <input type="text" name="_gotcha" style="display:none" />
         <input type="email" id="article-email" placeholder="Tu mejor email" required style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit;">
-        <button type="submit" class="btn" id="article-btn" style="background:var(--white); color:var(--bg); width:100%; cursor:pointer;">Enviar Manual y Descargar</button>
+        <button type="submit" class="btn" id="article-btn" style="background:var(--white); color:var(--bg); width:100%; cursor:pointer;">Descargar Roadmap</button>
       </form>
 
       <script>
@@ -145,6 +147,24 @@
           const btn = document.getElementById('article-btn');
           const status = document.getElementById('article-status');
           const email = document.getElementById('article-email').value;
+          const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+          if (gotcha !== "") return;
+
+          const forbiddenDomains = [
+            'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+            'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+            'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+          ];
+          const emailDomain = email.split('@')[1]?.toLowerCase();
+          
+          if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+            status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+            setTimeout(() => {
+              window.location.href = '../zero2dev_roadmap_30dias.pdf';
+            }, 1000);
+            return;
+          }
           
           btn.innerText = 'Enviando...';
           btn.disabled = true;
