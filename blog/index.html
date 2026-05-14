@@ -84,13 +84,12 @@
 
   <section class="section" style="padding: 4rem max(24px, calc(50% - 540px)) 0;">
     <div style="background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%); border:1px solid var(--border); border-radius:var(--radius); padding:3rem; text-align:center;">
-      <p class="eyebrow">Recurso Gratuito</p>
-      <h2 style="color:var(--white); margin-bottom:1rem;">Manual: De Cero a Developer</h2>
-      <p id="blog-status" style="color:var(--text2); max-width:500px; margin:0 auto 2rem;">Consigue la guía completa. Te la enviamos directamente a tu bandeja de entrada.</p>
+      <h2 style="color:var(--white); margin-bottom:1rem;">Roadmap: De 0 a producto real con IA</h2>
+      <p id="blog-status" style="color:var(--text2); max-width:500px; margin:0 auto 2rem;">Descarga el roadmap de 30 días para dominar la IA. Te lo enviamos directamente a tu bandeja de entrada.</p>
       
       <form id="blog-form" style="max-width:400px; margin:0 auto; display:flex; gap:0.5rem; flex-wrap:wrap;">
         <input type="email" name="email" id="blog-email" placeholder="Tu mejor email" required style="flex:1; min-width:200px; padding:0.8rem 1rem; border-radius:980px; border:1px solid var(--border); background:rgba(0,0,0,0.3); color:white;">
-        <button type="submit" class="nav-cta" id="blog-btn" style="border:none; cursor:pointer; padding:0.8rem 1.5rem;">Descargar Manual</button>
+        <button type="submit" class="nav-cta" id="blog-btn" style="border:none; cursor:pointer; padding:0.8rem 1.5rem;">Descargar Roadmap</button>
       </form>
 
       <script>
@@ -115,8 +114,8 @@
             btn.innerText = '✓';
             
             const link = document.createElement('a');
-            link.href = '../z2d-manual-v1-secure.pdf';
-            link.download = 'z2d-manual-v1-secure.pdf';
+            link.href = '../zero2dev_roadmap_30dias.pdf';
+            link.download = 'zero2dev_roadmap_30dias.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);

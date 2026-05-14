@@ -1541,16 +1541,15 @@
       <div class="recursos-grid">
         <div class="recurso-item">
           <span class="recurso-icon">🗺️</span>
-          <h4>Manual IA 2026</h4>
-          <p id="manual-status">Introduce tu email y te enviaremos el acceso al manual de forma inmediata.</p>
+          <h4>Roadmap IA 30 Días</h4>
+          <p id="manual-status">Introduce tu email y descarga el roadmap exacto para pasar de 0 a producto real en 30 días.</p>
 
           <form id="landing-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem;">
             <input type="email" name="email" id="landing-email" placeholder="Tu mejor email" required
               style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit; outline:none; transition:border-color 0.2s;"
               onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
             <button type="submit" class="btn btn-primary" id="landing-btn"
-              style="width:100%; justify-content:center; padding:1rem; border:none; cursor:pointer;">Enviar
-              Manual</button>
+              style="width:100%; justify-content:center; padding:1rem; border:none; cursor:pointer;">Descargar Roadmap</button>
           </form>
 
           <script>
@@ -1578,8 +1577,8 @@
 
                 // Iniciar descarga
                 const link = document.createElement('a');
-                link.href = 'z2d-manual-v1-secure.pdf';
-                link.download = 'z2d-manual-v1-secure.pdf';
+                link.href = 'zero2dev_roadmap_30dias.pdf';
+                link.download = 'zero2dev_roadmap_30dias.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
