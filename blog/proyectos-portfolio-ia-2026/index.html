@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Por qué tu portfolio de GitHub no sirve en 2026 (y qué construir) — Blog Zero2Dev</title>
+  <meta name="description"
+    content="Hacer un clon de Netflix o una To-Do list ya no te conseguirá entrevistas. Descubre los 3 proyectos Fullstack con IA que las empresas realmente buscan.">
+  <link rel="canonical" href="https://zero2dev.es/blog/proyectos-portfolio-ia-2026" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89MCYW0Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D89MCYW0Z7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Por qué tu portfolio de GitHub no sirve en 2026 (y qué construir en su lugar)",
+    "description": "Los proyectos de portfolio tradicionales han muerto. Descubre qué tipo de aplicaciones Fullstack impulsadas por IA necesitas construir para conseguir entrevistas de alto nivel este año.",
+    "author": {
+      "@type": "Person",
+      "name": "Raul Sánchez"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zero2Dev",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zero2dev.es/raul.jpg"
+      }
+    },
+    "datePublished": "2026-05-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://zero2dev.es/blog/proyectos-portfolio-ia-2026"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --text3: #6E6E73;
+      --accent: #2D5BE3;
+      --accent2: #4A7AFF;
+      --white: #FFFFFF;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-top: 80px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent2);
+    }
+
+    article {
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      color: var(--white);
+      letter-spacing: -2px;
+    }
+
+    .meta {
+      color: var(--text3);
+      font-size: 0.9rem;
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .content h2 {
+      font-size: 1.8rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--white);
+    }
+
+    .content h3 {
+      font-size: 1.3rem;
+      margin: 2rem 0 1rem;
+      color: var(--white);
+    }
+
+    .content p {
+      margin-bottom: 1.5rem;
+      color: var(--text2);
+      font-size: 1.1rem;
+    }
+
+    .content strong {
+      color: var(--white);
+    }
+
+    .content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: var(--text2);
+      font-size: 1.1rem;
+    }
+
+    .content li {
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-box {
+      margin-top: 5rem;
+      padding: 3rem;
+      background: linear-gradient(135deg, #0d1a3a 0%, #0a0f1e 100%);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border-radius: 980px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--text3);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+    <a href="/blog" style="color:var(--text2); text-decoration:none; font-size:0.9rem;">Volver al blog</a>
+  </nav>
+
+  <article>
+    <p class="eyebrow">Desarrollo Profesional</p>
+    <h1>Por qué tu portfolio de GitHub no sirve en 2026 (y qué construir en su lugar)</h1>
+    <div class="meta">
+      <span>17 Mayo, 2026</span>
+      <span>Lectura: 8 min</span>
+    </div>
+
+    <div class="content">
+      <p>Es domingo. Estás repasando tu GitHub, asegurándote de que los cuadritos verdes se vean bien. Tienes fijado un "Clon de Netflix", una "App del Clima" en React y un "Gestor de Tareas" con Node.js y MongoDB.</p>
+      
+      <p>Te tengo una mala noticia: <strong>ninguno de esos proyectos te va a conseguir una entrevista hoy.</strong></p>
+
+      <p>En 2024, esos proyectos demostraban que sabías escribir código. En 2026, una IA como Claude 3.5 o GPT-5 puede generar el código de un "Clon de Netflix" funcional en menos de 45 segundos. Los recruiters técnicos lo saben. Los Senior Architects lo sabemos.</p>
+
+      <h2>Lo que las empresas buscan de verdad</h2>
+      <p>Ya nadie contrata "picadores de código". Las empresas están contratando <strong>solucionadores de problemas</strong>. Quieren ver que sabes integrar piezas complejas, orquestar modelos de IA y construir algo que aporte valor real al negocio.</p>
+
+      <p>Si quieres destacar entre los miles de currículums que llegan cada día, tu portfolio debe demostrar que sabes jugar en la nueva liga. Aquí tienes 3 proyectos Fullstack que sí llamarán la atención de los reclutadores este año:</p>
+
+      <h3>1. Agente Autónomo de Soporte (RAG + LangChain + Node.js)</h3>
+      <p>Olvídate del típico chatbot de respuestas predefinidas. Construye un sistema RAG (Retrieval-Augmented Generation) que lea la documentación de una empresa (puedes usar PDFs falsos de prueba) y responda preguntas complejas citando las fuentes.</p>
+      <ul>
+        <li><strong>Frontend:</strong> Interfaz de chat fluida con React o Next.js, implementando streaming de texto (como ChatGPT).</li>
+        <li><strong>Backend:</strong> Node.js con LangChain o LlamaIndex.</li>
+        <li><strong>Base de Datos:</strong> Pinecone o Supabase pgvector para embeddings.</li>
+      </ul>
+      <p><em>Por qué funciona:</em> Demuestra que entiendes arquitecturas modernas de IA y bases de datos vectoriales, una habilidad crítica ahora mismo.</p>
+
+      <h3>2. Automatizador de Workflows con Visión Computacional</h3>
+      <p>Crea una herramienta interna donde un usuario pueda subir una factura en PDF o imagen, y el sistema extraiga automáticamente los datos, los categorice y los guarde en una base de datos, generando un dashboard analítico.</p>
+      <ul>
+        <li><strong>Frontend:</strong> Dashboard analítico (Tailwind + Recharts).</li>
+        <li><strong>Backend:</strong> Procesamiento asíncrono con colas (Redis/BullMQ) y llamadas a la API de Vision de OpenAI o Anthropic.</li>
+        <li><strong>Infraestructura:</strong> Almacenamiento en S3 (AWS) para los archivos.</li>
+      </ul>
+      <p><em>Por qué funciona:</em> Las empresas adoran la automatización. Este proyecto grita: "Sé cómo ahorrarle dinero y tiempo a tu empresa".</p>
+
+      <h3>3. Micro-SaaS de Generación de Contenido con Pasarela de Pago</h3>
+      <p>Una aplicación donde los usuarios se registren, paguen una suscripción (usando Stripe) y puedan generar hilos de Twitter o posts de LinkedIn optimizados a partir de una simple URL de un artículo de blog.</p>
+      <ul>
+        <li><strong>Frontend/Backend:</strong> Next.js App Router (Fullstack).</li>
+        <li><strong>Autenticación:</strong> NextAuth o Clerk.</li>
+        <li><strong>Pagos:</strong> Integración real con Stripe (modo test).</li>
+      </ul>
+      <p><em>Por qué funciona:</em> Demuestra que puedes construir un producto de extremo a extremo, incluyendo la lógica de negocio más crítica: el dinero y los usuarios.</p>
+
+      <h2>Deja de acumular repositorios inútiles</h2>
+      <p>Tener 50 repositorios a medias es peor que tener 2 proyectos terminados y en producción. Elige uno de los proyectos anteriores, dedícale las próximas 4 semanas y súbelo a un dominio real (Vercel, Render o AWS).</p>
+
+      <div class="cta-box">
+        <h3 style="color:var(--white); margin-bottom:1rem;">¿Quieres el Roadmap de 30 días?</h3>
+        <p id="article-status" style="color:var(--text2); font-size:0.95rem;">Introduce tu email y te enviaremos el roadmap completo para dominar el desarrollo con IA y construir proyectos como estos.</p>
+        
+        <form id="article-form" style="margin-top:1.5rem; display:flex; flex-direction:column; gap:0.75rem; max-width:400px; margin-left:auto; margin-right:auto;">
+          <!-- Honeypot -->
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="email" id="article-email" placeholder="Tu mejor email" required style="padding:0.9rem 1rem; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:white; font-family:inherit;">
+          <button type="submit" class="btn" id="article-btn" style="background:var(--white); color:var(--bg); width:100%; cursor:pointer;">Descargar Roadmap</button>
+        </form>
+
+        <script>
+          document.getElementById('article-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('article-btn');
+            const status = document.getElementById('article-status');
+            const email = document.getElementById('article-email').value;
+            const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+            if (gotcha !== "") return;
+
+            const forbiddenDomains = [
+              'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+              'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+              'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+            ];
+            const emailDomain = email.split('@')[1]?.toLowerCase();
+            
+            if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+              status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+              setTimeout(() => {
+                window.location.href = '../zero2dev_roadmap_30dias.pdf';
+              }, 1000);
+              return;
+            }
+            
+            btn.innerText = 'Enviando...';
+            btn.disabled = true;
+
+            fetch('https://formspree.io/f/xykojvky', {
+              method: 'POST',
+              body: JSON.stringify({ email: email }),
+              headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+            }).finally(() => {
+              status.innerHTML = '<span style="color:#4caf50">¡Éxito! Iniciando descarga...</span>';
+              btn.innerText = '¡Enviado!';
+              const link = document.createElement('a');
+              link.href = '../zero2dev_roadmap_30dias.pdf';
+              link.download = 'zero2dev_roadmap_30dias.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            });
+          });
+        </script>
+
+        <div style="margin-top:2rem;">
+          <a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:600; font-size:0.9rem;">O reserva tu Sesión Diagnóstico 1:1 →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    &copy; 2026 Zero2Dev — Raúl Sánchez
+  </footer>
+</body>
+
+</html>
