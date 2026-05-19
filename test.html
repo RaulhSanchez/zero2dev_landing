@@ -476,20 +476,19 @@
       btn.innerText = 'Procesando...';
       btn.disabled = true;
 
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('test_score', score);
-      formData.append('source', 'Test-Interactivo-Zero2Dev');
-
       fetch('https://formspree.io/f/xykojvky', {
         method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify({ 
+          email: email, 
+          Puntuacion_Test: score, 
+          Origen: 'Test-Interactivo-Zero2Dev' 
+        }),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).finally(() => {
         status.innerHTML = '<span style="color:var(--green)">¡Éxito! Tu informe se está descargando y te lo hemos enviado por email.</span>';
         btn.innerText = 'Enviado ✓';
         
-        // Simular descarga del informe PDF (puedes subir uno específico después, ahora usamos el roadmap como placeholder funcional)
+        // Simular descarga del informe PDF
         const link = document.createElement('a');
         link.href = '/zero2dev_roadmap_30dias.pdf';
         link.download = 'zero2dev_analisis_test.pdf';
