@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test de los 5 puntos: ¿Vas a conseguir trabajo como developer? — Zero2Dev</title>
+  <meta name="description"
+    content="Descubre si estás en el camino correcto para conseguir empleo Tech o si estás perdiendo el tiempo. Test interactivo gratuito.">
+  <link rel="canonical" href="https://zero2dev.es/test" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89MCYW0Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D89MCYW0Z7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --text3: #6E6E73;
+      --accent: #2D5BE3;
+      --accent-hover: #4A7AFF;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --red: #ff453a;
+      --yellow: #ffd60a;
+      --orange: #ff9f0a;
+      --green: #32d74b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 5%;
+    }
+
+    .quiz-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 600px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .step-counter {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .question-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .question-desc {
+      font-size: 0.9rem;
+      color: var(--text2);
+      margin-bottom: 2rem;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .option-btn {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1.25rem;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .option-btn:hover {
+      border-color: var(--accent);
+      background: rgba(45, 91, 227, 0.1);
+    }
+
+    .result-section {
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0 auto 1.5rem;
+      border: 4px solid;
+    }
+
+    .result-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .result-desc {
+      color: var(--text2);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .email-form {
+      background: var(--bg3);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .email-form h3 {
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .email-form p {
+      font-size: 0.9rem;
+      color: var(--text3);
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .input-group input[type="email"] {
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--white);
+      font-family: inherit;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .input-group input[type="email"]:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-submit {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 1rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Colors for results */
+    .res-red .score-circle { border-color: var(--red); color: var(--red); }
+    .res-red .result-title { color: var(--red); }
+    
+    .res-yellow .score-circle { border-color: var(--yellow); color: var(--yellow); }
+    .res-yellow .result-title { color: var(--yellow); }
+    
+    .res-orange .score-circle { border-color: var(--orange); color: var(--orange); }
+    .res-orange .result-title { color: var(--orange); }
+    
+    .res-green .score-circle { border-color: var(--green); color: var(--green); }
+    .res-green .result-title { color: var(--green); }
+
+    @media (max-width: 600px) {
+      .quiz-box { padding: 2rem; border-left: none; border-right: none; border-radius: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+  </nav>
+
+  <main class="main-container">
+    <div class="quiz-box" id="quiz-box">
+      <div class="progress-bar" id="progress-bar"></div>
+      
+      <!-- Question Section -->
+      <div id="question-section">
+        <span class="step-counter" id="step-counter">Paso 1 de 5</span>
+        <h2 class="question-title" id="question-title">Loading...</h2>
+        <p class="question-desc" id="question-desc"></p>
+        <div class="options-grid" id="options-grid">
+          <!-- Options injected via JS -->
+        </div>
+      </div>
+
+      <!-- Result Section -->
+      <div id="result-section" class="result-section">
+        <div id="result-theme" class="">
+          <div class="score-circle" id="score-display">0</div>
+          <h2 class="result-title" id="result-title">Title</h2>
+          <p class="result-desc" id="result-desc">Desc</p>
+        </div>
+
+        <div class="email-form">
+          <h3>Obtén el análisis completo en PDF</h3>
+          <p>Te enviaré un documento con el desglose de tu puntuación y qué debes hacer exactamente hoy para subir al siguiente nivel.</p>
+          
+          <form id="lead-form">
+            <!-- Honeypot -->
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="hidden" name="score" id="hidden-score" />
+            
+            <div class="input-group">
+              <input type="email" id="user-email" placeholder="Introduce tu email principal" required>
+              <button type="submit" class="btn-submit" id="submit-btn">Ver mi informe personalizado</button>
+            </div>
+            <p id="form-status" style="margin-top:1rem; font-size:0.85rem; display:none;"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const questions = [
+      {
+        title: "¿Tienes un proyecto propio en GitHub creado en los últimos 30 días?",
+        desc: "Los recruiters miran el GitHub. Sin actividad reciente = piensan que ya no programas activamente. Y un proyecto sin README = invisible.",
+        options: [
+          { text: "Sí, con commits regulares y README", points: 2 },
+          { text: "Sí pero abandonado o sin README", points: 1 },
+          { text: "No, solo proyectos de tutorial", points: 0 }
+        ]
+      },
+      {
+        title: "¿Sabes desplegar una aplicación en producción sin tutorial?",
+        desc: "Si no sabes desplegar, no estás listo para ningún empleo junior. Es la línea técnica entre 'estudiante' y 'junior empleable'.",
+        options: [
+          { text: "Sí, lo he hecho 3+ veces (Vercel, Render, VPS...)", points: 2 },
+          { text: "Lo he hecho 1 vez pero necesitaría guía otra vez", points: 1 },
+          { text: "No sé qué es 'desplegar' o lo asocio solo a tutorial", points: 0 }
+        ]
+      },
+      {
+        title: "¿Eres capaz de explicar lo que aprendiste esta semana en 1 minuto?",
+        desc: "Las entrevistas técnicas son 80% comunicación, 20% código. Si no sabes explicar lo que sabes, no pasas la primera ronda.",
+        options: [
+          { text: "Sí, podría grabarlo en vídeo ahora mismo", points: 2 },
+          { text: "Sí, pero me costaría organizarlo bien", points: 1 },
+          { text: "No sabría qué destacar o no recuerdo qué aprendí", points: 0 }
+        ]
+      },
+      {
+        title: "¿Dedicas más de 5 horas reales a la semana, sin distracciones?",
+        desc: "Por debajo de 5h reales/semana, la curva de aprendizaje en programación NO funciona. Es matemáticas.",
+        options: [
+          { text: "Sí, tengo bloques fijos en mi calendario", points: 2 },
+          { text: "Sí, pero irregular, depende de cómo vaya la semana", points: 1 },
+          { text: "No llego a 5h reales o son con interrupciones constantes", points: 0 }
+        ]
+      },
+      {
+        title: "¿Tienes a alguien que te corrija o lo haces 100% solo?",
+        desc: "Aprender solo significa cementar los malos hábitos. Lo que ahorras en mentor lo pagas en meses extra de aprendizaje.",
+        options: [
+          { text: "Sí, alguien con experiencia revisa mi código regularmente", points: 2 },
+          { text: "Tengo una comunidad/Discord donde pregunto dudas", points: 1 },
+          { text: "100% solo, no recibo feedback real de nadie", points: 0 }
+        ]
+      }
+    ];
+
+    let currentStep = 0;
+    let totalScore = 0;
+
+    const qSection = document.getElementById('question-section');
+    const rSection = document.getElementById('result-section');
+    const titleEl = document.getElementById('question-title');
+    const descEl = document.getElementById('question-desc');
+    const optionsGrid = document.getElementById('options-grid');
+    const stepCounter = document.getElementById('step-counter');
+    const progressBar = document.getElementById('progress-bar');
+
+    function renderQuestion() {
+      const q = questions[currentStep];
+      stepCounter.innerText = `Paso ${currentStep + 1} de ${questions.length}`;
+      titleEl.innerText = q.title;
+      descEl.innerText = q.desc;
+      progressBar.style.width = `${(currentStep / questions.length) * 100}%`;
+      
+      optionsGrid.innerHTML = '';
+      q.options.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<strong>${opt.points} pts</strong> <span style="margin-left:10px; border-left:1px solid var(--border); padding-left:10px;">${opt.text}</span>`;
+        btn.onclick = () => handleAnswer(opt.points);
+        optionsGrid.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(points) {
+      totalScore += points;
+      currentStep++;
+      if (currentStep < questions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      qSection.style.display = 'none';
+      rSection.style.display = 'block';
+      progressBar.style.width = '100%';
+
+      const scoreDisplay = document.getElementById('score-display');
+      const resTitle = document.getElementById('result-title');
+      const resDesc = document.getElementById('result-desc');
+      const resTheme = document.getElementById('result-theme');
+      const hiddenScore = document.getElementById('hidden-score');
+
+      scoreDisplay.innerText = totalScore;
+      hiddenScore.value = totalScore;
+
+      if (totalScore >= 0 && totalScore <= 3) {
+        resTheme.className = 'res-red';
+        resTitle.innerText = 'NO VAS A CONSEGUIRLO 🔴';
+        resDesc.innerText = 'No estás en el camino. Necesitas reconfigurar tu método antes de seguir invirtiendo tiempo.';
+      } else if (totalScore >= 4 && totalScore <= 6) {
+        resTheme.className = 'res-yellow';
+        resTitle.innerText = 'ESTÁS EN LA ZONA GRIS 🟡';
+        resDesc.innerText = 'Tienes potencial pero falta sistemática. Si arreglas 1-2 puntos, cambias de trayectoria en 90 días.';
+      } else if (totalScore >= 7 && totalScore <= 8) {
+        resTheme.className = 'res-orange';
+        resTitle.innerText = 'VAS BIEN PERO PUEDES MÁS 🟠';
+        resDesc.innerText = 'Estás en el 30% superior. Ajustar 1 punto clave te lleva directo al top 10% del mercado.';
+      } else {
+        resTheme.className = 'res-green';
+        resTitle.innerText = 'VAS A CONSEGUIRLO 🟢';
+        resDesc.innerText = 'Sigue. No pares. Si llevas más de 3 meses así sin entrevistas, el problema no es tu nivel, es tu posicionamiento.';
+      }
+    }
+
+    // Inicializar test
+    renderQuestion();
+
+    // Lógica Anti-Spam y Formulario
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('user-email').value;
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const gotcha = document.querySelector('input[name="_gotcha"]').value;
+      const score = document.getElementById('hidden-score').value;
+
+      status.style.display = 'block';
+
+      // 1. Honeypot
+      if (gotcha !== "") return;
+
+      // 2. Blacklist estricta
+      const forbiddenDomains = [
+        'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+        'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+        'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+      ];
+      const emailDomain = email.split('@')[1]?.toLowerCase();
+      
+      if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+        status.innerHTML = '<span style="color:var(--green)">¡Enviado! Revisa tu bandeja de entrada en unos minutos.</span>';
+        setTimeout(() => {
+          // No mandamos nada real pero fingimos éxito
+          window.location.href = '/zero2dev_roadmap_30dias.pdf';
+        }, 1500);
+        return;
+      }
+
+      btn.innerText = 'Procesando...';
+      btn.disabled = true;
+
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('test_score', score);
+      formData.append('source', 'Test-Interactivo-Zero2Dev');
+
+      fetch('https://formspree.io/f/xykojvky', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).finally(() => {
+        status.innerHTML = '<span style="color:var(--green)">¡Éxito! Tu informe se está descargando y te lo hemos enviado por email.</span>';
+        btn.innerText = 'Enviado ✓';
+        
+        // Simular descarga del informe PDF (puedes subir uno específico después, ahora usamos el roadmap como placeholder funcional)
+        const link = document.createElement('a');
+        link.href = '/zero2dev_roadmap_30dias.pdf';
+        link.download = 'zero2dev_analisis_test.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+  </script>
+</body>
+</html>
