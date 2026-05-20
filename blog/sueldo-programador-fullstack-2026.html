@@ -196,6 +196,39 @@
 </head>
 
 <body>
+<style>
+.global-banner {
+  background: var(--accent, #2D5BE3);
+  color: var(--white, #FFFFFF);
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.global-banner a {
+  color: var(--white, #FFFFFF);
+  text-decoration: underline;
+  margin-left: 8px;
+}
+nav {
+  top: 40px !important;
+}
+body {
+  padding-top: 40px !important;
+}
+</style>
+<div class="global-banner">
+  <span>🚀 ¡Aprovecha la oportunidad! <a href="/test">Descubre /test</a> 🚀</span>
+</div>
 
   <nav>
     <a href="../index.html" class="nav-logo">Zero<span>2</span>Dev</a>
