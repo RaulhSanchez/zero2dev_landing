@@ -306,6 +306,7 @@
             <!-- Honeypot -->
             <input type="text" name="_gotcha" style="display:none" />
             <input type="hidden" name="score" id="hidden-score" />
+            <input type="hidden" id="hidden-pdf-filename" />
             
             <div class="input-group">
               <input type="email" id="user-email" placeholder="Introduce tu email principal" required>
@@ -416,6 +417,7 @@
       const resDesc = document.getElementById('result-desc');
       const resTheme = document.getElementById('result-theme');
       const hiddenScore = document.getElementById('hidden-score');
+      const hiddenPdf = document.getElementById('hidden-pdf-filename');
 
       scoreDisplay.innerText = totalScore;
       hiddenScore.value = totalScore;
@@ -424,18 +426,22 @@
         resTheme.className = 'res-red';
         resTitle.innerText = 'NO VAS A CONSEGUIRLO 🔴';
         resDesc.innerText = 'No estás en el camino. Necesitas reconfigurar tu método antes de seguir invirtiendo tiempo.';
+        hiddenPdf.value = 'zero2dev_test_roja.pdf';
       } else if (totalScore >= 4 && totalScore <= 6) {
         resTheme.className = 'res-yellow';
         resTitle.innerText = 'ESTÁS EN LA ZONA GRIS 🟡';
         resDesc.innerText = 'Tienes potencial pero falta sistemática. Si arreglas 1-2 puntos, cambias de trayectoria en 90 días.';
+        hiddenPdf.value = 'zero2dev_test_gris.pdf';
       } else if (totalScore >= 7 && totalScore <= 8) {
         resTheme.className = 'res-orange';
         resTitle.innerText = 'VAS BIEN PERO PUEDES MÁS 🟠';
         resDesc.innerText = 'Estás en el 30% superior. Ajustar 1 punto clave te lleva directo al top 10% del mercado.';
+        hiddenPdf.value = 'zero2dev_test_naranja.pdf';
       } else {
         resTheme.className = 'res-green';
         resTitle.innerText = 'VAS A CONSEGUIRLO 🟢';
         resDesc.innerText = 'Sigue. No pares. Si llevas más de 3 meses así sin entrevistas, el problema no es tu nivel, es tu posicionamiento.';
+        hiddenPdf.value = 'zero2dev_test_verde.pdf';
       }
     }
 
@@ -463,12 +469,13 @@
         'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
       ];
       const emailDomain = email.split('@')[1]?.toLowerCase();
+      const pdfFilename = document.getElementById('hidden-pdf-filename').value;
       
       if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
         status.innerHTML = '<span style="color:var(--green)">¡Enviado! Revisa tu bandeja de entrada en unos minutos.</span>';
         setTimeout(() => {
-          // No mandamos nada real pero fingimos éxito
-          window.location.href = '/zero2dev_roadmap_30dias.pdf';
+          // No mandamos nada real pero fingimos éxito y descargamos el PDF correspondiente
+          window.location.href = '/pdfs/' + pdfFilename;
         }, 1500);
         return;
       }
@@ -488,10 +495,10 @@
         status.innerHTML = '<span style="color:var(--green)">¡Éxito! Tu informe se está descargando y te lo hemos enviado por email.</span>';
         btn.innerText = 'Enviado ✓';
         
-        // Simular descarga del informe PDF
+        // Descarga del informe PDF específico según puntuación
         const link = document.createElement('a');
-        link.href = '/zero2dev_roadmap_30dias.pdf';
-        link.download = 'zero2dev_analisis_test.pdf';
+        link.href = '/pdfs/' + pdfFilename;
+        link.download = pdfFilename;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
