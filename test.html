@@ -475,7 +475,7 @@
         btn.innerText = 'Redirigiendo...';
         setTimeout(() => {
           // No mandamos nada real pero fingimos éxito y redirigimos a la página de gracias
-          window.location.href = '/test/gracias/?pdf=' + pdfFilename;
+          window.location.href = '/test/gracias/index.html?pdf=' + encodeURIComponent(pdfFilename);
         }, 1000);
         return;
       }
@@ -493,7 +493,7 @@
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).finally(() => {
         btn.innerText = 'Redirigiendo...';
-        window.location.href = '/test/gracias/?pdf=' + pdfFilename;
+        window.location.href = '/test/gracias/index.html?pdf=' + encodeURIComponent(pdfFilename);
       });
     });
   </script>
