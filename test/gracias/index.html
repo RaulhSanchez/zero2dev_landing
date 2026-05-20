@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Gracias! — Zero2Dev</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89MCYW0Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D89MCYW0Z7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --accent: #2D5BE3;
+      --accent-hover: #4A7AFF;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --green: #32d74b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 5%;
+    }
+
+    .thanks-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 500px;
+      padding: 4rem 3rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      background: rgba(50, 215, 75, 0.1);
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 2rem;
+      color: var(--green);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    p {
+      color: var(--text2);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .download-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .download-link:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    .btn-home {
+      display: inline-block;
+      background: var(--white);
+      color: var(--bg);
+      padding: 1rem 2rem;
+      border-radius: 980px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 3rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-home:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+  </nav>
+
+  <main class="main-container">
+    <div class="thanks-box">
+      <div class="icon-wrapper">✓</div>
+      <h1>¡Listo!</h1>
+      <p>Tu PDF con el análisis personalizado se está descargando.</p>
+      
+      <a href="#" id="manual-download" class="download-link">¿No se ha descargado automáticamente? Pulsa aquí.</a>
+
+      <br>
+      <a href="/" class="btn-home">Volver al Inicio</a>
+    </div>
+  </main>
+
+  <script>
+    // Recuperar el nombre del PDF de la URL para forzar la descarga manual
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pdfFile = urlParams.get('pdf');
+      const downloadLink = document.getElementById('manual-download');
+
+      if (pdfFile) {
+        const fullPath = '/pdfs/' + pdfFile;
+        downloadLink.href = fullPath;
+        downloadLink.download = pdfFile;
+
+        // Auto-descargar al entrar en la página
+        setTimeout(() => {
+          const autoLink = document.createElement('a');
+          autoLink.href = fullPath;
+          autoLink.download = pdfFile;
+          document.body.appendChild(autoLink);
+          autoLink.click();
+          document.body.removeChild(autoLink);
+        }, 500);
+      } else {
+        downloadLink.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

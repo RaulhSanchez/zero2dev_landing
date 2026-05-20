@@ -472,11 +472,11 @@
       const pdfFilename = document.getElementById('hidden-pdf-filename').value;
       
       if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
-        status.innerHTML = '<span style="color:var(--green)">¡Enviado! Revisa tu bandeja de entrada en unos minutos.</span>';
+        btn.innerText = 'Redirigiendo...';
         setTimeout(() => {
-          // No mandamos nada real pero fingimos éxito y descargamos el PDF correspondiente
-          window.location.href = '/pdfs/' + pdfFilename;
-        }, 1500);
+          // No mandamos nada real pero fingimos éxito y redirigimos a la página de gracias
+          window.location.href = '/test/gracias/?pdf=' + pdfFilename;
+        }, 1000);
         return;
       }
 
@@ -492,16 +492,8 @@
         }),
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
       }).finally(() => {
-        status.innerHTML = '<span style="color:var(--green)">¡Éxito! Tu informe se está descargando y te lo hemos enviado por email.</span>';
-        btn.innerText = 'Enviado ✓';
-        
-        // Descarga del informe PDF específico según puntuación
-        const link = document.createElement('a');
-        link.href = '/pdfs/' + pdfFilename;
-        link.download = pdfFilename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        btn.innerText = 'Redirigiendo...';
+        window.location.href = '/test/gracias/?pdf=' + pdfFilename;
       });
     });
   </script>
