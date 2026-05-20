@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Prompts de Arquitectura IA para Cursor y Claude — Zero2Dev</title>
+  <meta name="description"
+    content="Genera el prompt maestro perfecto para inicializar tu proyecto con Inteligencia Artificial. Define tu stack y obtén las instrucciones de Arquitecto Senior para Claude o Cursor.">
+  <link rel="canonical" href="https://zero2dev.es/generador-prompts" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89MCYW0Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D89MCYW0Z7');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --text3: #6E6E73;
+      --accent: #2D5BE3;
+      --accent-hover: #4A7AFF;
+      --white: #FFFFFF;
+      --radius: 16px;
+      --green: #32d74b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .main-container {
+      flex: 1;
+      padding: 4rem 5%;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-section h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .header-section p {
+      color: var(--text2);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .select-input, .text-input {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .select-input:focus, .text-input:focus {
+      border-color: var(--accent);
+    }
+
+    .btn-generate {
+      width: 100%;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+
+    .btn-generate:hover {
+      background: var(--accent-hover);
+    }
+
+    .result-panel {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .result-header h3 {
+      font-size: 1.2rem;
+      color: var(--white);
+    }
+
+    .btn-copy {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-copy:hover {
+      background: var(--border);
+      color: var(--white);
+    }
+
+    .prompt-box {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      color: #A1A1A6;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      min-height: 300px;
+    }
+
+    /* Lead magnet en el panel de resultado */
+    .cta-mini {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(45, 91, 227, 0.1);
+      border: 1px solid rgba(45, 91, 227, 0.3);
+      border-radius: 8px;
+    }
+
+    .cta-mini h4 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .cta-mini p {
+      font-size: 0.85rem;
+      color: var(--text2);
+      margin-bottom: 1rem;
+    }
+
+    .cta-input-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .cta-input-group input {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--white);
+      outline: none;
+      font-family: inherit;
+    }
+
+    .cta-input-group button {
+      background: var(--white);
+      color: var(--bg);
+      border: none;
+      padding: 0 1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+    <a href="/test" style="color:var(--text2); text-decoration:none; font-size:0.9rem; font-weight:600;">Haz el Test de Empleabilidad →</a>
+  </nav>
+
+  <main class="main-container">
+    <div class="header-section">
+      <h1>Generador de Prompts de Arquitectura</h1>
+      <p>No empieces a programar a ciegas. Configura tu stack y obtén el "System Prompt" exacto que uso para inicializar proyectos profesionales en Cursor o Claude.</p>
+    </div>
+
+    <div class="tool-grid">
+      <!-- Panel de Configuración -->
+      <div class="panel">
+        <form id="generator-form">
+          <div class="form-group">
+            <label>¿De qué trata tu aplicación?</label>
+            <input type="text" id="app-desc" class="text-input" placeholder="Ej: Un clon de Notion para estudiantes" required>
+          </div>
+
+          <div class="form-group">
+            <label>Frontend Framework</label>
+            <select id="stack-frontend" class="select-input">
+              <option value="Next.js (React) con App Router">Next.js (React) con App Router</option>
+              <option value="React (Vite)">React (Vite)</option>
+              <option value="Vue 3 (Nuxt)">Vue 3 (Nuxt)</option>
+              <option value="Angular">Angular</option>
+              <option value="Vanilla JS (HTML/CSS/JS puro)">Vanilla JS Puro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Backend & API</label>
+            <select id="stack-backend" class="select-input">
+              <option value="Node.js con Express/TypeScript">Node.js con Express/TypeScript</option>
+              <option value="Node.js con NestJS">Node.js con NestJS</option>
+              <option value="Python con FastAPI">Python con FastAPI</option>
+              <option value="Serverless (Supabase / Firebase)">Serverless (Supabase / Firebase)</option>
+              <option value="Go">Go (Golang)</option>
+              <option value="Ninguno (Solo Frontend)">Ninguno (Solo Frontend)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Base de Datos</label>
+            <select id="stack-db" class="select-input">
+              <option value="PostgreSQL">PostgreSQL</option>
+              <option value="MongoDB">MongoDB</option>
+              <option value="MySQL">MySQL</option>
+              <option value="SQLite">SQLite</option>
+              <option value="Ninguna">Ninguna</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Sistema de Estilos / UI</label>
+            <select id="stack-ui" class="select-input">
+              <option value="TailwindCSS + Shadcn UI">TailwindCSS + Shadcn UI</option>
+              <option value="TailwindCSS Puro">TailwindCSS Puro</option>
+              <option value="Vanilla CSS (CSS Modules)">Vanilla CSS</option>
+              <option value="Material UI / Vuetify">Librería de Componentes (MUI/Vuetify)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-generate">Generar Prompt Maestro 🚀</button>
+        </form>
+      </div>
+
+      <!-- Panel de Resultado -->
+      <div class="panel result-panel">
+        <div class="result-header">
+          <h3>Tu Prompt Generado:</h3>
+          <button class="btn-copy" id="btn-copy">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copiar
+          </button>
+        </div>
+        
+        <div class="prompt-box" id="prompt-output">Rellena el formulario de la izquierda para generar las instrucciones precisas para la IA.</div>
+
+        <div class="cta-mini">
+          <h4>💡 ¿Quieres aprender a orquestar código con IA?</h4>
+          <p>Tener el prompt es el paso 1. Descarga nuestro Roadmap de 30 días para aprender a usar Cursor y Claude como un Senior Architect.</p>
+          <form id="lead-form" style="margin:0;">
+            <input type="text" name="_gotcha" style="display:none" />
+            <div class="cta-input-group">
+              <input type="email" id="user-email" placeholder="Tu email principal" required>
+              <button type="submit" id="submit-btn">Descargar</button>
+            </div>
+            <p id="form-status" style="margin-top:0.5rem; font-size:0.8rem; display:none; color:var(--green);"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Lógica del Generador
+    const form = document.getElementById('generator-form');
+    const output = document.getElementById('prompt-output');
+    const btnCopy = document.getElementById('btn-copy');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const desc = document.getElementById('app-desc').value;
+      const frontend = document.getElementById('stack-frontend').value;
+      const backend = document.getElementById('stack-backend').value;
+      const db = document.getElementById('stack-db').value;
+      const ui = document.getElementById('stack-ui').value;
+
+      const prompt = `Eres un Senior Software Architect. Tu objetivo es configurar la arquitectura base para una aplicación que se describe como: "${desc}".
+
+PUNTOS CLAVE Y STACK ESTRICTO A UTILIZAR:
+- Frontend: ${frontend}
+- Backend: ${backend}
+- Base de Datos: ${db}
+- Estilos / UI: ${ui}
+
+REGLAS DE ARQUITECTURA (Cumplimiento Obligatorio):
+1. Modularidad: Separa estrictamente la lógica de negocio de la capa de presentación. No mezcles consultas a BBDD dentro de los componentes visuales.
+2. Tipado y Clean Code: Aplica principios SOLID. Código limpio, comentado donde la lógica sea compleja, y modularizado. Evita archivos de más de 200 líneas.
+3. Escalabilidad: Piensa que esta app escalará a 10.000 usuarios recurrentes.
+
+INSTRUCCIONES DE RESPUESTA:
+Paso 1: Antes de escribir una sola línea de código funcional, dame el árbol de carpetas (file tree) recomendado para este stack.
+Paso 2: Escribe los comandos de terminal exactos para inicializar este proyecto e instalar todas las dependencias necesarias.
+Paso 3: Proporciona la configuración inicial de los archivos clave (configuraciones de entorno, conexión a DB, y setup principal de la aplicación).
+
+No me des explicaciones largas y genéricas. Actúa como un Tech Lead guiando a su equipo con instrucciones precisas y directas.`;
+
+      output.innerText = prompt;
+      output.style.color = 'var(--text)';
+    });
+
+    // Lógica de Copiar al Portapapeles
+    btnCopy.addEventListener('click', () => {
+      if (output.innerText.includes('Rellena el formulario')) return;
+      
+      navigator.clipboard.writeText(output.innerText).then(() => {
+        const originalText = btnCopy.innerHTML;
+        btnCopy.innerHTML = '¡Copiado ✓!';
+        btnCopy.style.background = 'var(--green)';
+        btnCopy.style.color = 'var(--bg)';
+        btnCopy.style.borderColor = 'var(--green)';
+        
+        setTimeout(() => {
+          btnCopy.innerHTML = originalText;
+          btnCopy.style.background = 'var(--bg3)';
+          btnCopy.style.color = 'var(--text)';
+          btnCopy.style.borderColor = 'var(--border)';
+        }, 2000);
+      });
+    });
+
+    // Lógica del Formulario Lead Magnet (Anti-Spam)
+    document.getElementById('lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('user-email').value;
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      const gotcha = document.querySelector('input[name="_gotcha"]').value;
+
+      status.style.display = 'block';
+
+      // Honeypot
+      if (gotcha !== "") return;
+
+      const forbiddenDomains = [
+        'bezill.com', 'gmeenramy.com', 'minitts.net', 'tempmail.com', 'yopmail.com', 
+        'mailinator.com', 'dispostable.com', 'guerrillamail.com', 'sharklasers.com',
+        'getnada.com', 'maildrop.cc', 'providemail.com', '10minutemail.com'
+      ];
+      const emailDomain = email.split('@')[1]?.toLowerCase();
+      
+      if (forbiddenDomains.includes(emailDomain) || (emailDomain && emailDomain.length < 4)) {
+        status.innerText = '¡Enviado! Descargando...';
+        setTimeout(() => {
+          window.location.href = '/zero2dev_roadmap_30dias.pdf';
+        }, 1000);
+        return;
+      }
+
+      btn.innerText = '...';
+      btn.disabled = true;
+
+      fetch('https://formspree.io/f/xykojvky', {
+        method: 'POST',
+        body: JSON.stringify({ email: email, source: 'Generador-Prompts-Tool' }),
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+      }).finally(() => {
+        status.innerText = '¡Enviado! Descargando...';
+        btn.innerText = '✓';
+        const link = document.createElement('a');
+        link.href = '/zero2dev_roadmap_30dias.pdf';
+        link.download = 'zero2dev_roadmap_30dias.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+  </script>
+</body>
+</html>
