@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D89MCYW0Z7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D89MCYW0Z7');
+  </script>
+
+  <title>Reserva una llamada gratuita · AuditaWeb · zero2dev.es</title>
+  <meta name="description" content="Reserva 15 minutos con Raúl Huete para revisar juntos el informe de tu web y saber exactamente qué arreglar primero. Sin compromiso." />
+  <link rel="canonical" href="https://zero2dev.es/llamada" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zero2dev.es/llamada" />
+  <meta property="og:title" content="Reserva una llamada gratuita · AuditaWeb" />
+  <meta property="og:description" content="15 minutos para revisar el informe de tu web y saber qué arreglar primero." />
+
+  <link rel="icon" type="image/jpeg" href="https://zero2dev.es/raul.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Calendly widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg2: #0A0A0A;
+      --bg3: #111111;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F5F5F7;
+      --text2: #A1A1A6;
+      --accent: #2D5BE3;
+      --white: #FFFFFF;
+      --radius: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      padding-top: 80px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 980px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 1.5rem 80px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .subtitle {
+      color: var(--text2);
+      font-size: 1.15rem;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Trust bar */
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text2);
+    }
+
+    .trust-item span.icon {
+      font-size: 1.1rem;
+    }
+
+    /* Layout 2-col */
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* What to expect */
+    .expect-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .expect-card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .step-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text p {
+      color: var(--text2);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* Author */
+    .author-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-top: 1.5rem;
+    }
+
+    .author-avatar {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info strong {
+      display: block;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info span {
+      display: block;
+      color: var(--text2);
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .author-info p {
+      color: var(--text2);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    /* Calendly embed */
+    .calendly-wrapper {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      min-height: 700px;
+    }
+
+    .calendly-inline-widget {
+      min-width: 100%;
+      height: 700px;
+    }
+
+    /* Sprint offer banner */
+    .offer-banner {
+      background: linear-gradient(135deg, rgba(45,91,227,0.15) 0%, rgba(45,91,227,0.05) 100%);
+      border: 1px solid rgba(45,91,227,0.3);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .offer-banner .badge {
+      flex-shrink: 0;
+      background: var(--accent);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.3rem 0.7rem;
+      border-radius: 980px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .offer-banner p {
+      color: var(--text2);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .offer-banner strong { color: var(--white); }
+
+    footer {
+      padding: 3rem 5%;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .nav-links { display: none; }
+
+      .calendly-inline-widget { height: 600px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="/" class="logo">Zero<span>2</span>Dev</a>
+    <ul class="nav-links">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/rutas">Rutas</a></li>
+      <li><a href="/planes">Planes</a></li>
+      <li><a href="https://audita.zero2dev.es" target="_blank">AuditaWeb</a></li>
+      <li><a href="https://calendly.com/92sanchez-raul?a1=Sesion-Diagnostico-PAGO" target="_blank" class="nav-cta">Sesión Diagnóstico (29€)</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <span class="eyebrow">Llamada gratuita · 15 minutos</span>
+    <h1>Revisamos juntos<br>el informe de tu web.</h1>
+    <p class="subtitle">
+      Sin tecnicismos. Sin compromiso. En 15 minutos sabrás exactamente qué está frenando a tu web y qué arreglar primero para notar resultados.
+    </p>
+
+    <div class="trust-bar">
+      <div class="trust-item"><span class="icon">⏱</span> 15 minutos por videollamada</div>
+      <div class="trust-item"><span class="icon">🆓</span> Completamente gratis</div>
+      <div class="trust-item"><span class="icon">📍</span> Raúl Huete · Madrid sur</div>
+      <div class="trust-item"><span class="icon">🚫</span> Sin presión de venta</div>
+    </div>
+
+    <div class="offer-banner">
+      <span class="badge">AuditaWeb</span>
+      <p>
+        ¿Acabas de recibir tu informe de <strong>audita.zero2dev.es</strong>? Esta llamada es para ti.
+        Revisamos los problemas en rojo juntos y te digo, sin rodeos, cuánto cuesta arreglarlo y en cuánto tiempo.
+      </p>
+    </div>
+
+    <div class="layout">
+
+      <!-- Calendly -->
+      <div>
+        <div class="calendly-wrapper">
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/92sanchez-raul/15min?hide_gdpr_banner=1&primary_color=2D5BE3&utm_source=auditaweb&utm_medium=landing&utm_campaign=sprint-quickwins"
+            style="min-width:100%;height:700px;"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Right column: what to expect + author -->
+      <div>
+        <div class="expect-card">
+          <h2>Qué pasa en la llamada</h2>
+
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <strong>Revisamos tu informe (5 min)</strong>
+              <p>Abro el PDF de AuditaWeb contigo y explicamos en lenguaje normal qué significa cada problema en rojo.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <strong>Priorizamos qué duele más (5 min)</strong>
+              <p>No todo es igual de urgente. Identificamos los 2-3 puntos que más clientes te están costando ahora mismo.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <strong>Te digo qué puedes hacer (5 min)</strong>
+              <p>Opciones concretas: qué puedes arreglar tú, qué puedo arreglar yo en una semana y cuánto costaría. Sin letra pequeña.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="author-card">
+          <div class="author-avatar">
+            <img src="https://zero2dev.es/raul.jpg" alt="Raúl Huete" />
+          </div>
+          <div class="author-info">
+            <strong>Raúl Huete</strong>
+            <span>Arquitecto de Software freelance · Fuenlabrada, Madrid</span>
+            <p>Llevo años optimizando webs y aplicaciones. Creé AuditaWeb para que cualquier PYME pueda saber exactamente qué falla en su web, sin pagar a una agencia.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 <a href="https://zero2dev.es">zero2dev.es</a> · Raúl Huete ·
+      <a href="https://zero2dev.es/privacidad">Privacidad</a> ·
+      <a href="https://zero2dev.es/aviso-legal">Aviso legal</a>
+    </p>
+  </footer>
+
+  <!-- Calendly widget JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+</body>
+</html>
